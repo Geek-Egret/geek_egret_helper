@@ -1,23 +1,28 @@
-#include "ge_window.h"
-
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
+#include <windows.h>
+
+#include "main_window.h"
+#include "ge_json.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-
+    QApplication GE_Helper(argc, argv);
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
     for (const QString &locale : uiLanguages) {
         const QString baseName = "GEEK_EGRET_HELPER_" + QLocale(locale).name();
         if (translator.load(":/i18n/" + baseName)) {
-            a.installTranslator(&translator);
+            GE_Helper.installTranslator(&translator);
             break;
         }
     }
-    GE_WINDOW w;
-    w.show();
-    return a.exec();
+    // 读取配置文件
+    JSON.configFileRead(JSON.CONFIG);
+    JSON.configFileRead(JSON.PATHS);
+
+    MAIN_WINDOW mainWindow;
+    mainWindow.show();
+    return GE_Helper.exec();
 }

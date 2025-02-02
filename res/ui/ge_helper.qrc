@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/logo/geek_egret">
+        <file>LOGO.png</file>
+    </qresource>
+    <qresource prefix="/MyGo_Embeded">
+        <file>HIHI_BACKGROUND.png</file>
+    </qresource>
+</RCC>
