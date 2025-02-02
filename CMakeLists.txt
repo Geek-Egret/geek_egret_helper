@@ -69,6 +69,7 @@ set(PROJECT_SOURCES
         ${TS_FILES}
         ${QRC_FILES}
         ${UI_FILES}
+        ./res/logo.rc
 )
 # 添加文件
 qt_add_executable(${PROJECT_NAME}
