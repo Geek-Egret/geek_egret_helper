@@ -1,4 +1,8 @@
-<style> h2 { border-bottom: none } </style>
+<style> 
+h2 { 
+    border-bottom: none 
+} 
+</style>
 <i>GEEK EGRET助手
 =====
 ## 介绍
