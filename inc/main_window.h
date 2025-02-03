@@ -29,6 +29,8 @@ private slots:
     void on_pushButton_3_clicked();
     // 帮助
     void on_pushButton_4_clicked();
+    // 网站键
+    void on_pushButton_clicked();
     // ADC 上位机
     void on_pushButton_5_clicked();
     // 吉他无线助手

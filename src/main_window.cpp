@@ -58,6 +58,12 @@ void MAIN_WINDOW::on_pushButton_4_clicked()
     // this->close();
 }
 
+// 网站键按下
+void MAIN_WINDOW::on_pushButton_clicked()
+{
+    QDesktopServices::openUrl(QUrl(QString("https://geek-egret.top")));
+}
+
 // ADC 上位机
 void MAIN_WINDOW::on_pushButton_5_clicked()
 {

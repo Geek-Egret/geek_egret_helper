@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(GEEK_EGRET_HELPER VERSION 1.0 LANGUAGES C CXX)
+project(GEEK_EGRET_HELPER VERSION 1.0.1 LANGUAGES C CXX)
 
 set(CMAKE_PLATFORMS "x86_64_windows")
 include(./platforms/${CMAKE_PLATFORMS}.cmake)
@@ -135,7 +135,7 @@ install(DIRECTORY config/ DESTINATION config )   # 指定用户配置文件安�
 install(DIRECTORY lib/qt/ DESTINATION bin )      # 指定Qt依赖文件安装路径
 include (InstallRequiredSystemLibraries)    # 自动包含目标系统所需的运行时库
 # set (CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
-set (CPACK_PACKAGE_VERSION_MAJOR "1.0")    # 设置打包的版本号
+# set (CPACK_PACKAGE_VERSION_MAJOR "1.0")    # 设置打包的版本号
 set(CPACK_SOURCE_GENERATOR "TGZ")
 include (CPack)
 # 打包

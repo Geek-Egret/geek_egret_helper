@@ -36,9 +36,9 @@ public:
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
     QFrame *line_6;
-    QFrame *line_7;
     QPushButton *pushButton;
     QFrame *line_3;
+    QFrame *line_4;
 
     void setupUi(QMainWindow *MAIN_WINDOW)
     {
@@ -53,7 +53,7 @@ public:
         MAIN_WINDOW->setWindowIcon(icon);
         MAIN_WINDOW->setWindowOpacity(1.000000000000000);
         MAIN_WINDOW->setAutoFillBackground(false);
-        MAIN_WINDOW->setIconSize(QSize(30, 25));
+        MAIN_WINDOW->setIconSize(QSize(64, 64));
         centralwidget = new QWidget(MAIN_WINDOW);
         centralwidget->setObjectName("centralwidget");
         label = new QLabel(centralwidget);
@@ -118,12 +118,6 @@ public:
         line_6->setStyleSheet(QString::fromUtf8("background-color:black;"));
         line_6->setFrameShape(QFrame::Shape::VLine);
         line_6->setFrameShadow(QFrame::Shadow::Sunken);
-        line_7 = new QFrame(centralwidget);
-        line_7->setObjectName("line_7");
-        line_7->setGeometry(QRect(66, 26, 185, 1));
-        line_7->setStyleSheet(QString::fromUtf8("background-color:black;"));
-        line_7->setFrameShape(QFrame::Shape::HLine);
-        line_7->setFrameShadow(QFrame::Shadow::Sunken);
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName("pushButton");
         pushButton->setGeometry(QRect(70, 4, 181, 20));
@@ -139,6 +133,12 @@ public:
         line_3->setStyleSheet(QString::fromUtf8("background-color:black;"));
         line_3->setFrameShape(QFrame::Shape::HLine);
         line_3->setFrameShadow(QFrame::Shadow::Sunken);
+        line_4 = new QFrame(centralwidget);
+        line_4->setObjectName("line_4");
+        line_4->setGeometry(QRect(194, 30, 57, 1));
+        line_4->setStyleSheet(QString::fromUtf8("background-color:black;"));
+        line_4->setFrameShape(QFrame::Shape::HLine);
+        line_4->setFrameShadow(QFrame::Shadow::Sunken);
         MAIN_WINDOW->setCentralWidget(centralwidget);
         scrollArea->raise();
         label->raise();
@@ -146,9 +146,9 @@ public:
         pushButton_3->raise();
         pushButton_4->raise();
         line_6->raise();
-        line_7->raise();
         pushButton->raise();
         line_3->raise();
+        line_4->raise();
 
         retranslateUi(MAIN_WINDOW);
 

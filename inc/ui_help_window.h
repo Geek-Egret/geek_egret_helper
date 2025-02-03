@@ -30,7 +30,7 @@ public:
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/logo/geek_egret/LOGO.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         HELP_WINDOW->setWindowIcon(icon);
-        HELP_WINDOW->setIconSize(QSize(35, 35));
+        HELP_WINDOW->setIconSize(QSize(64, 64));
         centralwidget = new QWidget(HELP_WINDOW);
         centralwidget->setObjectName("centralwidget");
         HELP_WINDOW->setCentralWidget(centralwidget);

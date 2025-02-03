@@ -52,7 +52,7 @@ public:
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/logo/geek_egret/LOGO.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         CONFIG_WINDOW->setWindowIcon(icon);
-        CONFIG_WINDOW->setIconSize(QSize(35, 25));
+        CONFIG_WINDOW->setIconSize(QSize(64, 64));
         centralwidget = new QWidget(CONFIG_WINDOW);
         centralwidget->setObjectName("centralwidget");
         scrollArea = new QScrollArea(centralwidget);

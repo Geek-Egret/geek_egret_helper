@@ -13,6 +13,8 @@
 #include <QDir>
 #include <QFileDialog>
 #include <QProcess>
+#include <QDesktopServices>
+#include <QUrl>
 
 // LIB
 #include "json.hpp"
