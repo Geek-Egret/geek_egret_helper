@@ -117,5 +117,6 @@
 | ----- | ---- |
 | V0.1 | 完成Windows平台工程搭建 |
 | V1.0 | 大致编写完成，已打包为V1.0发行版 |
+| V1.0.1 | 添加Geek-Egret官网按键，已打包为V1.0.1发行版 |
 
 # [<font color=#0b88bb>🐧要做一辈子嵌入式开发!!!!!🐧</font>](https://github.com/Geek-Egret)
