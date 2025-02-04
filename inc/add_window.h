@@ -1,19 +1,19 @@
-#ifndef CONFIG_WINDOW_H
-#define CONFIG_WINDOW_H
+#ifndef ADD_WINDOW_H
+#define ADD_WINDOW_H
 
 #include <QWidget>
 
 namespace Ui {
-class configWindow;
+class addWindow;
 }
 
-class configWindow : public QWidget
+class addWindow : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit configWindow(QWidget *parent = nullptr);
-    ~configWindow();
+    explicit addWindow(QWidget *parent = nullptr);
+    ~addWindow();
 
 private slots:
     // 关闭
@@ -24,7 +24,7 @@ private slots:
     void on_back_clicked();
 
 private:
-    Ui::configWindow *ui;
+    Ui::addWindow* ui;
 
     virtual void paintEvent(QPaintEvent* event) override;   // 窗口重绘
     virtual void mousePressEvent(QMouseEvent* event) override;  // 鼠标按下事件
@@ -36,4 +36,4 @@ private:
     QPoint mousePosition; //鼠标的绝对位置
 };
 
-#endif // CONFIG_WINDOW_H
+#endif // ADD_WINDOW_H

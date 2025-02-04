@@ -5,39 +5,51 @@
 #include <iostream>
 #include <windows.h>
 
+#include <QMouseEvent>
+
 #include "config.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-class MAIN_WINDOW;
+class mainWindow;
 }
 QT_END_NAMESPACE
 
-// MAIN_WINDOW
-class MAIN_WINDOW : public QMainWindow
+// MainWindow
+class mainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MAIN_WINDOW(QWidget *parent = nullptr);
-    ~MAIN_WINDOW();
+    mainWindow(QWidget *parent = nullptr);
+    ~mainWindow();
+    
 // 必须要有 slot，否则QT无法识别槽函数
 private slots:
-    // 确认
-    void on_pushButton_2_clicked();
+    // 关闭
+    void on_Close_clicked();
+    // 最小化
+    void on_Minimize_clicked();
+    // 官网链接
+    void on_url_clicked();
     // 设置
-    void on_pushButton_3_clicked();
-    // 帮助
-    void on_pushButton_4_clicked();
-    // 网站键
-    void on_pushButton_clicked();
-    // ADC 上位机
-    void on_pushButton_5_clicked();
-    // 吉他无线助手
-    void on_pushButton_8_clicked();
+    void on_config_clicked();
+
+    void on_add_clicked();
 
 private:
-    Ui::MAIN_WINDOW*ui;
-    bool exeOpenFlag[TOTAL_APP_NUM] = { false };
+    Ui::mainWindow*ui;
+
+    // 问候语显示
+    void greetingShow();
+
+    virtual void paintEvent(QPaintEvent* event) override;   // 窗口重绘
+    virtual void mousePressEvent(QMouseEvent* event) override;  // 鼠标按下事件
+    virtual void mouseMoveEvent(QMouseEvent* event) override;   // 鼠标移动事件
+    // virtual void mouseReleaseEvent(QMouseEvent* event) override;    // 鼠标释放事件
+
+    QPoint diffPosition; //鼠标和窗口的相对位移
+    QPoint windowPosition; //窗口的绝对位置
+    QPoint mousePosition; //鼠标的绝对位置
 };
-#endif // MAIN_WINDOW_H
+#endif // MainWindow_H

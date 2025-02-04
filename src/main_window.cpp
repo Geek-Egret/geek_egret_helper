@@ -1,115 +1,137 @@
-#include "main_window.h"
-#include "config_window.h"
-#include "help_window.h"
 #include "ui_main_window.h"
+#include "config_window.h"
+#include "add_window.h"
 
 #include "common.h"
 
-MAIN_WINDOW::MAIN_WINDOW(QWidget *parent)
+mainWindow::mainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MAIN_WINDOW)
+    , ui(new Ui::mainWindow)
 {
+    // 设置ui
     ui->setupUi(this);
-    // setStyleSheet("background-color:#8d8d8d;");
-    setWindowFlags(windowFlags() & ~Qt::WindowMinMaxButtonsHint);
 
+    // 隐藏标题栏
+    setWindowFlags(Qt::FramelessWindowHint);
+    // 窗口透明化
+    setAttribute(Qt::WA_TranslucentBackground);
+    // 设置窗口样式
+    setStyleSheet(mainWindowStyle);
+
+    // 问候语
+    greetingShow();
+    
+    // 控件鼠标动作颜色
+    ui->url->setStyleSheet(buttonColorAction);
+    ui->add->setStyleSheet(buttonColorAction);
+    ui->config->setStyleSheet(buttonColorAction);
 }
 
-MAIN_WINDOW::~MAIN_WINDOW()
+mainWindow::~mainWindow()
 {
     delete ui;
 }
 
-// 确定按下
-void MAIN_WINDOW::on_pushButton_2_clicked()
+// 问候语显示
+void mainWindow::greetingShow()
 {
-    for (int i = 0; i < TOTAL_APP_NUM; i++)
+    time_t now = time(0);   // 获取当前时间
+    tm* nowtm = localtime(&now);    // 格式化时间
+
+    // Emoji Unicode码，加0x00防止Emoji后边乱码
+    static char32_t  emojiShow[] = { 0x1F601,0x00 };
+
+    if (nowtm->tm_hour < 6)
     {
-        if (exeOpenFlag[i])
-        {
-            QProcess::startDetached(JSON.exePaths[i]);
-            
-        }
+        ui->greet->setText("凌晨好");
     }
+    else if (nowtm->tm_hour >= 6 && nowtm->tm_hour < 9)
+    {
+        ui->greet->setText("早晨好");
+    }
+    else if (nowtm->tm_hour >= 9 && nowtm->tm_hour < 11)
+    {
+        ui->greet->setText("上午好");
+    }
+    else if (nowtm->tm_hour >= 11 && nowtm->tm_hour < 13)
+    {
+        ui->greet->setText("中午好");
+    }
+    else if (nowtm->tm_hour >= 13 && nowtm->tm_hour < 17)
+    {
+        ui->greet->setText("下午好");
+    }
+    else if (nowtm->tm_hour >= 17 && nowtm->tm_hour < 19)
+    {
+        ui->greet->setText("傍晚好");
+    }
+    else
+    {
+        ui->greet->setText("晚上好");
+    }
+    
+    int idx = GeekEgret::randomInt(0, (sizeof(emojiUnicodeRange)/sizeof(emojiUnicodeRange[0]))-1);
+    emojiShow[0] = GeekEgret::randomEmojiUnicode(emojiUnicodeRange[idx][0], emojiUnicodeRange[idx][1]);
+    ui->greet_emoji->setText(QString::fromUcs4(emojiShow));
 }
 
-// 设置按下
-void MAIN_WINDOW::on_pushButton_3_clicked()
+// 窗口重绘
+void mainWindow::paintEvent(QPaintEvent* event)
 {
-    static CONFIG_WINDOW* configWindow = new CONFIG_WINDOW();
-    // 判断窗口是否打开，否则不显示新窗口
-    if(!configWindow->isActiveWindow())
-    {
-        configWindow->show();
-        configWindow->init();
-    }
-    // this->close();
+    QStyleOption opt;
+    opt.initFrom(this);
+    QPainter painter(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+}
+// 鼠标按下事件
+void mainWindow::mousePressEvent(QMouseEvent* event)
+{
+    mousePosition = event->globalPos();
+    windowPosition = this->pos();
+    diffPosition = mousePosition - windowPosition;
+}
+// 鼠标移动事件
+void mainWindow::mouseMoveEvent(QMouseEvent* event)
+{
+    QPoint pos = event->globalPos();
+
+    this->move(pos- diffPosition);
 }
 
-// 帮助按下
-void MAIN_WINDOW::on_pushButton_4_clicked()
+
+// 窗口关闭
+void mainWindow::on_Close_clicked()
 {
-    static HELP_WINDOW* helpWindow = new HELP_WINDOW();
-    // 判断窗口是否打开，否则不显示新窗口
-    if(!helpWindow->isActiveWindow())
-    {
-        helpWindow->show();
-    }
-    // this->close();
+    this->close();
 }
 
-// 网站键按下
-void MAIN_WINDOW::on_pushButton_clicked()
+// 窗口最小化
+void mainWindow::on_Minimize_clicked()
+{
+    this->showMinimized();
+}
+
+// 官网链接按键
+void mainWindow::on_url_clicked()
 {
     QDesktopServices::openUrl(QUrl(QString("https://geek-egret.top")));
 }
 
-// ADC 上位机
-void MAIN_WINDOW::on_pushButton_5_clicked()
+// 设置按键
+void mainWindow::on_config_clicked()
 {
-    static int clickNum = 0;
-    clickNum++;
-    if (clickNum > 1)
-    {
-        clickNum = 0;
-    }
-    if (clickNum % 2 == 0)
-    {
-        ui->pushButton_5->setStyleSheet(QString::fromUtf8("background:transparent"));
-        exeOpenFlag[0] = false;
-    }
-    else
-    {
-        ui->pushButton_5->setStyleSheet(optionsChoosingColor);
-        exeOpenFlag[0] = true;
-    }
+    // 显示设置页面
+    this->close();
+    configWindow* Config = new configWindow();
+    Config->show();
 }
 
-// 吉他无线助手
-void MAIN_WINDOW::on_pushButton_8_clicked()
+// 添加设备按键
+void mainWindow::on_add_clicked()
 {
-    static int clickNum = 0;
-    clickNum++;
-    if (clickNum > 1)
-    {
-        clickNum = 0;
-    }
-    if (clickNum % 2 == 0)
-    {
-        ui->pushButton_8->setStyleSheet(QString::fromUtf8("background:transparent"));
-        exeOpenFlag[1] = false;
-    }
-    else
-    {
-        ui->pushButton_8->setStyleSheet(optionsChoosingColor);
-        exeOpenFlag[1] = true;
-    }
+    // 显示添加设备页面
+    this->close();
+    addWindow* Add = new addWindow();
+    Add->show();
 }
-
-
-
-
-
-
-
 

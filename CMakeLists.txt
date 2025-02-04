@@ -37,11 +37,13 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 aux_source_directory(${PROJECT_ROOT_PATH}/src SRC_FILES)
 set(INC_FILES
     ${PROJECT_ROOT_PATH}/inc/main_window.h
-    ${PROJECT_ROOT_PATH}/inc/ui_main_window.h
+    ${PROJECT_ROOT_PATH}/inc/greet_window.h
     ${PROJECT_ROOT_PATH}/inc/config_window.h
+    ${PROJECT_ROOT_PATH}/inc/add_window.h
+    ${PROJECT_ROOT_PATH}/inc/ui_main_window.h
+    ${PROJECT_ROOT_PATH}/inc/ui_greet_window.h
     ${PROJECT_ROOT_PATH}/inc/ui_config_window.h
-    ${PROJECT_ROOT_PATH}/inc/help_window.h
-    ${PROJECT_ROOT_PATH}/inc/ui_help_window.h
+    ${PROJECT_ROOT_PATH}/inc/ui_add_window.h
     ${PROJECT_ROOT_PATH}/inc/config.h
     ${PROJECT_ROOT_PATH}/inc/ge_json.h
     ${PROJECT_ROOT_PATH}/inc/common.h
@@ -54,8 +56,9 @@ set(QRC_FILES
 )
 set(UI_FILES
     ${PROJECT_ROOT_PATH}/res/ui/main_window.ui
+    ${PROJECT_ROOT_PATH}/res/ui/greet_window.ui
     ${PROJECT_ROOT_PATH}/res/ui/config_window.ui
-    ${PROJECT_ROOT_PATH}/res/ui/help_window.ui
+    ${PROJECT_ROOT_PATH}/res/ui/add_window.ui
 )
 
 
@@ -75,15 +78,13 @@ set(PROJECT_SOURCES
 qt_add_executable(${PROJECT_NAME}
     MANUAL_FINALIZATION
     ${PROJECT_SOURCES}
+    res/ui/greet_window.ui
 )
 # 添加翻译文件
 qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
-if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.GEEK_EGRET_HELPER)
-endif()
 set_target_properties(${PROJECT_NAME} PROPERTIES
     ${BUNDLE_ID_OPTION}
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}

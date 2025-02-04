@@ -3,7 +3,7 @@
 #include <QTranslator>
 #include <windows.h>
 
-#include "main_window.h"
+#include "greet_window.h"
 #include "ge_json.h"
 
 int main(int argc, char *argv[])
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     JSON.configFileRead(JSON.CONFIG);
     JSON.configFileRead(JSON.PATHS);
 
-    MAIN_WINDOW mainWindow;
-    mainWindow.show();
+    greetWindow greetWindow;
+    greetWindow.show();
     return GE_Helper.exec();
 }

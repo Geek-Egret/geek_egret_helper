@@ -84,8 +84,9 @@
 - 进入工程 `res/ui`
 - 编译 .ui：文件终端执行
     - `uic main_window.ui -o ../../inc/ui_main_window.h`
+    - `uic greet_window.ui -o ../../inc/ui_greet_window.h`
     - `uic config_window.ui -o ../../inc/ui_config_window.h`
-    - `uic help_window.ui -o ../../inc/ui_help_window.h`
+    - `uic add_window.ui -o ../../inc/ui_add_window.h`
 - 进入工程 `platforms` 选择编译平台文件，根据编译环境修改配置内容
 - 使用 Visual Studio/Visual Studio Code/Qt Creator 打开工程
 - 生成/运行
@@ -98,9 +99,16 @@
 - 由于有中文注释导致有些变量未定义：修改Visual Code的中文编码方式
 - Visual Studio的输出目录为 `out/build`
 - 若要进行打包，则必须保证IDE是以 `release模式` 进行编译的，否则会导致安装后提示缺少 `ucrtbased.dll`
-- 若出现类似该报错 ![image](error/debug_error.png)
+- 若出现类似该报错 ![image](error/debug_error_1.png)
 则大概率为 `config` 文件夹对于可执行文件的相对路径错误导致的，更改编译配置文件的 `PROJECT_CONFIG_FOLDER_COPY_PATH` 选项可解决
+- 若出现该报错 ![image](error/debug_error_2.png)
+则大概率为输出目录录处的 `config` 文件夹未更新导致的，有以下两种方法
+    - 重新 CMake 构建工程
+    - 手动更新输出目录处的 `config` 文件夹
+- 若出现该报错 ![image](error/debug_error_3.png)
+则大概率为 `config` 文件夹未复制到输出目录处，其对于输出目录的相对路径由 `platforms/***.cmake` 文件中的 `PROJECT_CONFIG_FOLDER_COPY_PATH` 定义
 - 实测使用VS code进行编译时若开启 `SETUP_PACK_FLAG` 选项则会导致编译报错，若有打包需求可以选择手动打包/使用VS进行编译打包
+- QT creator 出现 <b>no executable specified</b> 时，删除CMakeLists.txt.user后用QT creator重新打开并配置
 ----
 ## 设置文件说明
 ### config.json
@@ -119,5 +127,6 @@
 | V1.0.0 | 大致编写完成，已打包为V1.0发行版 |
 | V1.0.1 | 添加Geek-Egret官网按键，已打包为V1.0.1发行版 |
 | V1.1.0 | 修改软件名 |
+| V1.9.0 | V2.0.0预研版本，更改全部GUI！ |
 
 # [<font color=#0b88bb>🐧要做一辈子嵌入式开发!!!!!🐧</font>](https://github.com/Geek-Egret)

@@ -1,11 +1,11 @@
-#include "config_window.h"
-#include "ui_config_window.h"
+#include "add_window.h"
+#include "ui_add_window.h"
 
 #include "common.h"
 
-configWindow::configWindow(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::configWindow)
+addWindow::addWindow(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::addWindow)
 {
     ui->setupUi(this);
 
@@ -20,13 +20,13 @@ configWindow::configWindow(QWidget *parent) :
     ui->back->setStyleSheet(buttonColorAction);
 }
 
-configWindow::~configWindow()
+addWindow::~addWindow()
 {
     delete ui;
 }
 
 // 窗口重绘
-void configWindow::paintEvent(QPaintEvent* event)
+void addWindow::paintEvent(QPaintEvent* event)
 {
     QStyleOption opt;
     opt.initFrom(this);
@@ -34,14 +34,14 @@ void configWindow::paintEvent(QPaintEvent* event)
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
 // 鼠标按下事件
-void configWindow::mousePressEvent(QMouseEvent* event)
+void addWindow::mousePressEvent(QMouseEvent* event)
 {
     mousePosition = event->globalPos();
     windowPosition = this->pos();
     diffPosition = mousePosition - windowPosition;
 }
 // 鼠标移动事件
-void configWindow::mouseMoveEvent(QMouseEvent* event)
+void addWindow::mouseMoveEvent(QMouseEvent* event)
 {
     QPoint pos = event->globalPos();
 
@@ -50,19 +50,19 @@ void configWindow::mouseMoveEvent(QMouseEvent* event)
 
 
 // 窗口关闭
-void configWindow::on_Close_clicked()
+void addWindow::on_Close_clicked()
 {
     this->close();
 }
 
 // 窗口最小化
-void configWindow::on_Minimize_clicked()
+void addWindow::on_Minimize_clicked()
 {
     this->showMinimized();
 }
 
 // 返回
-void configWindow::on_back_clicked()
+void addWindow::on_back_clicked()
 {
     // 显示主页面
     this->close();

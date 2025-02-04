@@ -10,7 +10,24 @@ void GE::JSON::configFileRead(CONFIG_FILE_FLAG configFileFlag)
 			configFile >> config_json;
 			configFile.close();
 			// 读取软件设置
-			optionsChoosingColor = QString::fromStdString("background:"+(std::string)config_json["OPTIONS_CHOOSING_COLOR"]);
+			/* 窗口背景颜色 */
+			mainWindowStyle = QString::fromStdString("QMainWindow{"
+				"background-color:" + (std::string)config_json["WINDOW_BACKGROUND_COLOR"] + ";"   // 背景颜色
+				"border-radius:" + (std::string)config_json["WINDOW_BORDER_RADIUS"] + ";"  // 圆角直径
+				"border-style:solid;"   // 边框线条风格
+				"border-width:2px;"     // 边框线条宽度
+				"border-color:" + (std::string)config_json["WINDOW_BACKGROUND_COLOR"] + ";"   // 边框颜色
+				"}");
+			childWindowStyle = QString::fromStdString("QWidget{"
+				"background-color:" + (std::string)config_json["WINDOW_BACKGROUND_COLOR"] + ";"   // 背景颜色
+				"border-radius:" + (std::string)config_json["WINDOW_BORDER_RADIUS"] + ";"  // 圆角直径
+				"border-style:solid;"   // 边框线条风格
+				"border-width:2px;"     // 边框线条宽度
+				"border-color:" + (std::string)config_json["WINDOW_BACKGROUND_COLOR"] + ";"   // 边框颜色
+				"}");
+			/* 按键颜色动作 */
+			buttonColorAction = QString::fromStdString("QPushButton{background:"+(std::string)config_json["BUTTON_COMMON_BACKGROUND_COLOR"]+";}"	// 按键正常背景颜色
+				"QPushButton:hover{background-color:"+(std::string)config_json["BUTTON_HOVER_BACKGROUND_COLOR"]+";}");	// 鼠标划过背景颜色
 			break;
 		}
 		case PATHS: {
