@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(GEEK_EGRET_HELPER VERSION 1.0.1 LANGUAGES C CXX)
+project(Geek-Egret-Helper VERSION 1.0.1 LANGUAGES C CXX)
 
 set(CMAKE_PLATFORMS "x86_64_windows")
 include(./platforms/${CMAKE_PLATFORMS}.cmake)
