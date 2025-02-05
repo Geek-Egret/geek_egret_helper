@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>deviceWindow</class>
+ <widget class="QWidget" name="deviceWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>880</width>
+    <height>435</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>880</width>
+    <height>435</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>880</width>
+    <height>435</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="device_1">
+   <property name="geometry">
+    <rect>
+     <x>115</x>
+     <y>75</y>
+     <width>280</width>
+     <height>280</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:transparent</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>130</width>
+     <height>130</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="device_2">
+   <property name="geometry">
+    <rect>
+     <x>485</x>
+     <y>75</y>
+     <width>280</width>
+     <height>280</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:transparent</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>130</width>
+     <height>130</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="previous">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>190</y>
+     <width>40</width>
+     <height>55</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:transparent</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="ge_helper.qrc">
+     <normaloff>:/mainWindow/button/previous.png</normaloff>:/mainWindow/button/previous.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>40</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="next">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>190</y>
+     <width>40</width>
+     <height>55</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:transparent</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="ge_helper.qrc">
+     <normaloff>:/mainWindow/button/next.png</normaloff>:/mainWindow/button/next.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>40</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="device_3">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>75</y>
+     <width>280</width>
+     <height>280</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:transparent</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>130</width>
+     <height>130</height>
+    </size>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="ge_helper.qrc"/>
+ </resources>
+ <connections/>
+</ui>

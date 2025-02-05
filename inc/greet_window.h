@@ -32,9 +32,5 @@ private:
     virtual void timerEvent(QTimerEvent* e);    // 定时器事件
 
     int timerID;    // 定时器ID
-
-    QPoint diffPosition; //鼠标和窗口的相对位移
-    QPoint windowPosition; //窗口的绝对位置
-    QPoint mousePosition; //鼠标的绝对位置
 };
 #endif // MainWindow_H

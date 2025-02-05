@@ -47,6 +47,9 @@ private:
     virtual void mousePressEvent(QMouseEvent* event) override;  // 鼠标按下事件
     virtual void mouseMoveEvent(QMouseEvent* event) override;   // 鼠标移动事件
     // virtual void mouseReleaseEvent(QMouseEvent* event) override;    // 鼠标释放事件
+    virtual void timerEvent(QTimerEvent* e);    // 定时器事件
+
+    int timerID;    // 定时器ID
 
     QPoint diffPosition; //鼠标和窗口的相对位移
     QPoint windowPosition; //窗口的绝对位置

@@ -21,8 +21,6 @@ QT_BEGIN_NAMESPACE
 class Ui_addWindow
 {
 public:
-    QPushButton *Close;
-    QPushButton *Minimize;
     QLabel *title;
     QPushButton *back;
 
@@ -30,37 +28,15 @@ public:
     {
         if (addWindow->objectName().isEmpty())
             addWindow->setObjectName("addWindow");
-        addWindow->resize(880, 540);
-        addWindow->setMinimumSize(QSize(880, 540));
-        addWindow->setMaximumSize(QSize(880, 540));
+        addWindow->resize(880, 510);
+        addWindow->setMinimumSize(QSize(880, 510));
+        addWindow->setMaximumSize(QSize(880, 510));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/mainWindow/logo/logo_1.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         addWindow->setWindowIcon(icon);
-        Close = new QPushButton(addWindow);
-        Close->setObjectName("Close");
-        Close->setGeometry(QRect(855, 8, 15, 15));
-        Close->setMinimumSize(QSize(15, 15));
-        Close->setMaximumSize(QSize(15, 15));
-        Close->setStyleSheet(QString::fromUtf8("background:transparent"));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/mainWindow/button/close.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        Close->setIcon(icon1);
-        Close->setIconSize(QSize(13, 13));
-        Close->setFlat(true);
-        Minimize = new QPushButton(addWindow);
-        Minimize->setObjectName("Minimize");
-        Minimize->setGeometry(QRect(830, 11, 15, 15));
-        Minimize->setMinimumSize(QSize(15, 15));
-        Minimize->setMaximumSize(QSize(15, 15));
-        Minimize->setStyleSheet(QString::fromUtf8("background:transparent"));
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/mainWindow/button/minimize.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        Minimize->setIcon(icon2);
-        Minimize->setIconSize(QSize(13, 13));
-        Minimize->setFlat(true);
         title = new QLabel(addWindow);
         title->setObjectName("title");
-        title->setGeometry(QRect(55, 20, 51, 35));
+        title->setGeometry(QRect(55, 0, 91, 35));
         title->setMinimumSize(QSize(0, 35));
         title->setMaximumSize(QSize(16777215, 35));
         QFont font;
@@ -71,12 +47,12 @@ public:
         title->setStyleSheet(QString::fromUtf8("color:#282c34;"));
         back = new QPushButton(addWindow);
         back->setObjectName("back");
-        back->setGeometry(QRect(15, 30, 35, 25));
+        back->setGeometry(QRect(15, 10, 35, 25));
         back->setMinimumSize(QSize(35, 25));
         back->setMaximumSize(QSize(35, 25));
-        QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/mainWindow/button/back.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        back->setIcon(icon3);
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/mainWindow/button/back.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        back->setIcon(icon1);
         back->setIconSize(QSize(25, 25));
         back->setFlat(true);
 
@@ -88,9 +64,7 @@ public:
     void retranslateUi(QWidget *addWindow)
     {
         addWindow->setWindowTitle(QCoreApplication::translate("addWindow", "Geek-Egret\345\212\251\346\211\213-\346\267\273\345\212\240\350\256\276\345\244\207", nullptr));
-        Close->setText(QString());
-        Minimize->setText(QString());
-        title->setText(QCoreApplication::translate("addWindow", "\350\256\276\347\275\256", nullptr));
+        title->setText(QCoreApplication::translate("addWindow", "\346\267\273\345\212\240\350\256\276\345\244\207", nullptr));
         back->setText(QString());
     } // retranslateUi
 

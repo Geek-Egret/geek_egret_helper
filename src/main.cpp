@@ -22,7 +22,8 @@ int main(int argc, char *argv[])
     JSON.configFileRead(JSON.CONFIG);
     JSON.configFileRead(JSON.PATHS);
 
-    greetWindow greetWindow;
-    greetWindow.show();
+    greetWindow* Greet = new greetWindow();
+    Greet->show();
+
     return GE_Helper.exec();
 }

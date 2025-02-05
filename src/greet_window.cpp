@@ -20,9 +20,11 @@ greetWindow::greetWindow(QWidget *parent)
     setWindowFlags(Qt::FramelessWindowHint);
     // 窗口透明化
     setAttribute(Qt::WA_TranslucentBackground);
+    // 关闭就销毁，释放内存
+    setAttribute(Qt::WA_DeleteOnClose, true);
 
     // 启动定时器 /ms
-    timerID = this->startTimer(1500);
+    timerID = this->startTimer(greetWindowShowTime);
 }
 
 greetWindow::~greetWindow()
@@ -42,8 +44,8 @@ void greetWindow::paintEvent(QPaintEvent* event)
 void greetWindow::timerEvent(QTimerEvent* e)
 {
     // 显示主页面
-    this->close();
     this->killTimer(timerID);
+    this->close();
     GeekEgret::Main = new mainWindow();
     GeekEgret::Main->show();
 }

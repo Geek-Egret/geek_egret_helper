@@ -95,7 +95,7 @@ public:
         greet->setMaximumSize(QSize(16777215, 45));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221")});
-        font1.setPointSize(18);
+        font1.setPointSize(16);
         font1.setBold(true);
         greet->setFont(font1);
         greet->setStyleSheet(QString::fromUtf8("color:#282c34;"));
@@ -137,7 +137,7 @@ public:
         add->setFlat(true);
         greet_emoji = new QLabel(centralwidget);
         greet_emoji->setObjectName("greet_emoji");
-        greet_emoji->setGeometry(QRect(190, 40, 25, 25));
+        greet_emoji->setGeometry(QRect(180, 35, 35, 35));
         QFont font2;
         font2.setPointSize(16);
         greet_emoji->setFont(font2);

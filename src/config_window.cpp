@@ -1,4 +1,3 @@
-#include "config_window.h"
 #include "ui_config_window.h"
 
 #include "common.h"
@@ -18,6 +17,13 @@ configWindow::configWindow(QWidget *parent) :
 
     // 控件鼠标动作颜色
     ui->back->setStyleSheet(buttonColorAction);
+
+    // 子窗口镶嵌在父窗口
+    setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
+    hide();
+
+    // 关闭就销毁，释放内存
+    setAttribute(Qt::WA_DeleteOnClose, true);
 }
 
 configWindow::~configWindow()
@@ -33,39 +39,12 @@ void configWindow::paintEvent(QPaintEvent* event)
     QPainter painter(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
-// 鼠标按下事件
-void configWindow::mousePressEvent(QMouseEvent* event)
-{
-    mousePosition = event->globalPos();
-    windowPosition = this->pos();
-    diffPosition = mousePosition - windowPosition;
-}
-// 鼠标移动事件
-void configWindow::mouseMoveEvent(QMouseEvent* event)
-{
-    QPoint pos = event->globalPos();
-
-    this->move(pos - diffPosition);
-}
-
-
-// 窗口关闭
-void configWindow::on_Close_clicked()
-{
-    this->close();
-}
-
-// 窗口最小化
-void configWindow::on_Minimize_clicked()
-{
-    this->showMinimized();
-}
 
 // 返回
 void configWindow::on_back_clicked()
 {
     // 显示主页面
     this->close();
-    GeekEgret::Main->show();
+    // GeekEgret::Main->show();
 }
 

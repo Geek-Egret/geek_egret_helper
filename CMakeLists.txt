@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(Geek-Egret-Helper VERSION 1.0.1 LANGUAGES C CXX)
+project(Geek-Egret-Helper VERSION 1.9.0 LANGUAGES C CXX)
 
 set(CMAKE_PLATFORMS "x86_64_windows")
 include(./platforms/${CMAKE_PLATFORMS}.cmake)
@@ -40,13 +40,16 @@ set(INC_FILES
     ${PROJECT_ROOT_PATH}/inc/greet_window.h
     ${PROJECT_ROOT_PATH}/inc/config_window.h
     ${PROJECT_ROOT_PATH}/inc/add_window.h
+    ${PROJECT_ROOT_PATH}/inc/device_window.h
     ${PROJECT_ROOT_PATH}/inc/ui_main_window.h
     ${PROJECT_ROOT_PATH}/inc/ui_greet_window.h
     ${PROJECT_ROOT_PATH}/inc/ui_config_window.h
     ${PROJECT_ROOT_PATH}/inc/ui_add_window.h
+    ${PROJECT_ROOT_PATH}/inc/ui_device_window.h
     ${PROJECT_ROOT_PATH}/inc/config.h
     ${PROJECT_ROOT_PATH}/inc/ge_json.h
     ${PROJECT_ROOT_PATH}/inc/common.h
+    ${PROJECT_ROOT_PATH}/inc/deviceAPP.h
 )
 set(TS_FILES
     ${PROJECT_ROOT_PATH}/res/fonts/GEEK_EGRET_HELPER_zh_CN.ts
@@ -59,6 +62,7 @@ set(UI_FILES
     ${PROJECT_ROOT_PATH}/res/ui/greet_window.ui
     ${PROJECT_ROOT_PATH}/res/ui/config_window.ui
     ${PROJECT_ROOT_PATH}/res/ui/add_window.ui
+    ${PROJECT_ROOT_PATH}/res/ui/device_window.ui
 )
 
 
@@ -78,7 +82,6 @@ set(PROJECT_SOURCES
 qt_add_executable(${PROJECT_NAME}
     MANUAL_FINALIZATION
     ${PROJECT_SOURCES}
-    res/ui/greet_window.ui
 )
 # 添加翻译文件
 qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})

@@ -1,7 +1,4 @@
 #include "ui_main_window.h"
-#include "config_window.h"
-#include "add_window.h"
-
 #include "common.h"
 
 mainWindow::mainWindow(QWidget *parent)
@@ -25,6 +22,17 @@ mainWindow::mainWindow(QWidget *parent)
     ui->url->setStyleSheet(buttonColorAction);
     ui->add->setStyleSheet(buttonColorAction);
     ui->config->setStyleSheet(buttonColorAction);
+
+    // 显示设备页面
+    deviceWindow* Device = new deviceWindow(this);
+    Device->move(0, 90);
+    Device->show();
+
+    // 关闭就销毁，释放内存
+    setAttribute(Qt::WA_DeleteOnClose, true);
+
+    // 启动定时器 /ms
+    timerID = this->startTimer(greetingReflashTime);
 }
 
 mainWindow::~mainWindow()
@@ -40,6 +48,7 @@ void mainWindow::greetingShow()
 
     // Emoji Unicode码，加0x00防止Emoji后边乱码
     static char32_t  emojiShow[] = { 0x1F601,0x00 };
+    static bool emojiUpdate = true;
 
     if (nowtm->tm_hour < 6)
     {
@@ -70,9 +79,13 @@ void mainWindow::greetingShow()
         ui->greet->setText("晚上好");
     }
     
-    int idx = GeekEgret::randomInt(0, (sizeof(emojiUnicodeRange)/sizeof(emojiUnicodeRange[0]))-1);
-    emojiShow[0] = GeekEgret::randomEmojiUnicode(emojiUnicodeRange[idx][0], emojiUnicodeRange[idx][1]);
-    ui->greet_emoji->setText(QString::fromUcs4(emojiShow));
+    if (emojiUpdate)
+    {
+        int idx = GeekEgret::randomInt(0, (sizeof(emojiUnicodeRange) / sizeof(emojiUnicodeRange[0])) - 1);
+        emojiShow[0] = GeekEgret::randomEmojiUnicode(emojiUnicodeRange[idx][0], emojiUnicodeRange[idx][1]);
+        ui->greet_emoji->setText(QString::fromUcs4(emojiShow));
+        emojiUpdate = false;
+    }
 }
 
 // 窗口重绘
@@ -94,8 +107,8 @@ void mainWindow::mousePressEvent(QMouseEvent* event)
 void mainWindow::mouseMoveEvent(QMouseEvent* event)
 {
     QPoint pos = event->globalPos();
-
-    this->move(pos- diffPosition);
+    if(diffPosition.y() < 25)
+        this->move(pos- diffPosition);
 }
 
 
@@ -121,8 +134,8 @@ void mainWindow::on_url_clicked()
 void mainWindow::on_config_clicked()
 {
     // 显示设置页面
-    this->close();
-    configWindow* Config = new configWindow();
+    configWindow* Config = new configWindow(this);
+    Config->move(0, 20);
     Config->show();
 }
 
@@ -130,8 +143,14 @@ void mainWindow::on_config_clicked()
 void mainWindow::on_add_clicked()
 {
     // 显示添加设备页面
-    this->close();
-    addWindow* Add = new addWindow();
+    addWindow* Add = new addWindow(this);
+    Add->move(0, 20);
     Add->show();
 }
 
+//重写定时器事件
+void mainWindow::timerEvent(QTimerEvent* e)
+{
+    // 刷新欢迎语
+    greetingShow();
+}

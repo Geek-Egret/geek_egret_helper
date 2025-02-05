@@ -10,5 +10,12 @@
         <file>add.png</file>
         <file>config.png</file>
         <file>back.png</file>
+        <file>next.png</file>
+        <file>previous.png</file>
+    </qresource>
+    <qresource prefix="/device">
+        <file>adc_card.png</file>
+        <file>leg_lite.png</file>
+        <file>start.png</file>
     </qresource>
 </RCC>

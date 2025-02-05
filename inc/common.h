@@ -35,8 +35,14 @@
 
 // 用户头文件
 #include "main_window.h"
+#include "add_window.h"
+#include "greet_window.h"
+#include "config_window.h"
+#include "device_window.h"
+#include "add_window.h"
 #include "ge_json.h"
 #include "config.h"
+#include "deviceAPP.h"
 
 namespace GeekEgret
 {

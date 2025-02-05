@@ -87,6 +87,7 @@
     - `uic greet_window.ui -o ../../inc/ui_greet_window.h`
     - `uic config_window.ui -o ../../inc/ui_config_window.h`
     - `uic add_window.ui -o ../../inc/ui_add_window.h`
+    - `uic device_window.ui -o ../../inc/ui_device_window.h`
 - 进入工程 `platforms` 选择编译平台文件，根据编译环境修改配置内容
 - 使用 Visual Studio/Visual Studio Code/Qt Creator 打开工程
 - 生成/运行
@@ -128,5 +129,6 @@
 | V1.0.1 | 添加Geek-Egret官网按键，已打包为V1.0.1发行版 |
 | V1.1.0 | 修改软件名 |
 | V1.9.0 | V2.0.0预研版本，更改全部GUI！ |
+| V1.9.5 | 新增设备显示栏，支持超多设备！|
 
 # [<font color=#0b88bb>🐧要做一辈子嵌入式开发!!!!!🐧</font>](https://github.com/Geek-Egret)

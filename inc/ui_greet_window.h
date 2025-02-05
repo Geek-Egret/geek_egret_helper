@@ -26,15 +26,15 @@ public:
     {
         if (greetWindow->objectName().isEmpty())
             greetWindow->setObjectName("greetWindow");
-        greetWindow->resize(400, 251);
-        greetWindow->setMinimumSize(QSize(400, 251));
-        greetWindow->setMaximumSize(QSize(400, 251));
+        greetWindow->resize(300, 188);
+        greetWindow->setMinimumSize(QSize(300, 188));
+        greetWindow->setMaximumSize(QSize(880, 540));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/mainWindow/logo/logo_1.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         greetWindow->setWindowIcon(icon);
         label = new QLabel(greetWindow);
         label->setObjectName("label");
-        label->setGeometry(QRect(0, 0, 400, 251));
+        label->setGeometry(QRect(0, 0, 300, 188));
         label->setPixmap(QPixmap(QString::fromUtf8(":/mainWindow/logo/logo_2.png")));
 
         retranslateUi(greetWindow);
