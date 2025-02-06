@@ -35,6 +35,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 
 # 用户文件
 aux_source_directory(${PROJECT_ROOT_PATH}/src SRC_FILES)
+aux_source_directory(${PROJECT_ROOT_PATH}/src/device SRC_FILES)
 set(INC_FILES
     ${PROJECT_ROOT_PATH}/inc/main_window.h
     ${PROJECT_ROOT_PATH}/inc/greet_window.h
@@ -49,7 +50,12 @@ set(INC_FILES
     ${PROJECT_ROOT_PATH}/inc/config.h
     ${PROJECT_ROOT_PATH}/inc/ge_json.h
     ${PROJECT_ROOT_PATH}/inc/common.h
-    ${PROJECT_ROOT_PATH}/inc/deviceAPP.h
+)
+# 设备头文件
+set(DEVICE_INC_FILES
+    ${PROJECT_ROOT_PATH}/inc/device/deviceAPP.h
+    ${PROJECT_ROOT_PATH}/inc/device/adc_card_window.h
+    ${PROJECT_ROOT_PATH}/inc/device/ui_adc_card_window.h
 )
 set(TS_FILES
     ${PROJECT_ROOT_PATH}/res/fonts/GEEK_EGRET_HELPER_zh_CN.ts
@@ -63,6 +69,7 @@ set(UI_FILES
     ${PROJECT_ROOT_PATH}/res/ui/config_window.ui
     ${PROJECT_ROOT_PATH}/res/ui/add_window.ui
     ${PROJECT_ROOT_PATH}/res/ui/device_window.ui
+    ${PROJECT_ROOT_PATH}/res/ui/adc_card_window.ui
 )
 
 
@@ -73,6 +80,7 @@ include_directories(${PROJECT_ROOT_PATH}/inc)
 set(PROJECT_SOURCES
         ${SRC_FILES}
         ${INC_FILES}
+        ${DEVICE_INC_FILES}
         ${TS_FILES}
         ${QRC_FILES}
         ${UI_FILES}

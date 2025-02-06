@@ -127,34 +127,42 @@ void deviceWindow::on_next_clicked()
 // 设备1
 void deviceWindow::on_device_1_clicked()
 {
+    deviceLists[deviceShowNum[0]].deviceAPP();
 }
 // 设备2
 void deviceWindow::on_device_2_clicked()
 {
+    deviceLists[deviceShowNum[1]].deviceAPP();
 }
 // 设备3
 void deviceWindow::on_device_3_clicked()
 {
+    deviceLists[deviceShowNum[2]].deviceAPP();
 }
 // 设备4
 void deviceWindow::on_device_4_clicked()
 {
+    deviceLists[deviceShowNum[3]].deviceAPP();
 }
 // 设备5
 void deviceWindow::on_device_5_clicked()
 {
+    deviceLists[deviceShowNum[4]].deviceAPP();
 }
 // 设备6
 void deviceWindow::on_device_6_clicked()
 {
+    deviceLists[deviceShowNum[5]].deviceAPP();
 }
 // 设备7
 void deviceWindow::on_device_7_clicked()
 {
+    deviceLists[deviceShowNum[6]].deviceAPP();
 }
 // 设备8
 void deviceWindow::on_device_8_clicked()
 {
+    deviceLists[deviceShowNum[7]].deviceAPP();
 }
 
 // 重写定时器事件

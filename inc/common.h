@@ -47,7 +47,8 @@
 #include "add_window.h"
 #include "ge_json.h"
 #include "config.h"
-#include "deviceAPP.h"
+#include "device/deviceAPP.h"
+#include "device/adc_card_window.h"
 
 namespace GeekEgret
 {

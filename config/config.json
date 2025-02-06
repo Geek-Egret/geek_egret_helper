@@ -4,5 +4,5 @@
   "BUTTON_HOVER_BACKGROUND_COLOR": "#1f9ccf",
   "GREET_WINDOW_SHOW_TIME": 1500,
   "GREETING_REFLASH_TIME": 60000,
-  "ADDED_DEVICE_LISTS": [ "adc_card" ]
+  "ADDED_DEVICE_LISTS": [ "adc_card", "leg_lite", "leg_lite" ]
 }

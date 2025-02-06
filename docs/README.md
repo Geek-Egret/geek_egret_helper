@@ -88,6 +88,7 @@
     - `uic config_window.ui -o ../../inc/ui_config_window.h`
     - `uic add_window.ui -o ../../inc/ui_add_window.h`
     - `uic device_window.ui -o ../../inc/ui_device_window.h`
+    - `uic adc_card_window.ui -o ../../inc/ui_adc_card_window.h`
 - 进入工程 `platforms` 选择编译平台文件，根据编译环境修改配置内容
 - 使用 Visual Studio/Visual Studio Code/Qt Creator 打开工程
 - 生成/运行
