@@ -30,7 +30,7 @@ void GE::JSON::configFileRead(CONFIG_FILE_FLAG configFileFlag)
 				"}");
 			/* 按键颜色动作 */
 			buttonColorAction = QString::fromStdString(
-				"QPushButton{background:"+(std::string)config_json["BUTTON_COMMON_BACKGROUND_COLOR"]+";}"	// 按键正常背景颜色
+				"QPushButton{background:"+(std::string)config_json["WINDOW_BACKGROUND_COLOR"]+";}"	// 按键正常背景颜色
 				"QPushButton:hover{background-color:"+(std::string)config_json["BUTTON_HOVER_BACKGROUND_COLOR"]+
 				";}");	// 鼠标划过背景颜色
 			greetWindowShowTime = (int)config_json["GREET_WINDOW_SHOW_TIME"];	// 欢迎窗口显示时间
@@ -66,9 +66,14 @@ void GE::JSON::configFileWrite(CONFIG_FILE_FLAG configFileFlag)
 	switch (configFileFlag)
 	{
 		case CONFIG: {
-			// 解析JSON
-			std::ifstream configFile(CONFIG_FOLDER_PATH + "\\config.json");
-			configFile >> config_json;
+			std::ofstream configFile(CONFIG_FOLDER_PATH + "\\econfig.json");
+
+			// 更改数据
+			config_json["WINDOW_BACKGROUND_COLOR"];
+			config_json["WINDOW_BORDER_RADIUS"] = exePaths[1].toStdString();
+
+			// 写入
+			configFile << exePaths_json.dump(4); // 4个空格缩进
 			configFile.close();
 			break;
 		}

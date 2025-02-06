@@ -5,6 +5,7 @@
 
 // 注意是要相对于可执行文件的路径/绝对路径
 #define CONFIG_FOLDER_PATH (std::string)("..\\config")
+#define DEVICE_NUM_LIMIT 8
 
 extern QString mainWindowStyle;
 extern QString childWindowStyle;

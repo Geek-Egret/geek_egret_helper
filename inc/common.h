@@ -21,6 +21,11 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QStyleOption>
+#include <QPropertyAnimation>
+#include <QParallelAnimationGroup>
+#include <QTimer>
+#include <QScrollBar>
+#include <QPushButton>
 
 // LIB
 #include "json.hpp"

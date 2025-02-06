@@ -25,13 +25,20 @@ deviceWindow::deviceWindow(QWidget *parent)
     ui->next->setStyleSheet(buttonColorAction);
     ui->previous->setStyleSheet(buttonColorAction);
 
-    pageSwitchButton();
-
     // 设备匹配
     deviceMatch();
 
-    // 设备显示
+    // 页面切换按钮
+    pageSwitchButton();
+
+    // 隐藏横向滚动条
+    ui->scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    // 显示设备
     deviceShow();
+
+    // 启动定时器 /ms
+    timerID = this->startTimer(2);
 }
 
 deviceWindow::~deviceWindow()
@@ -52,11 +59,11 @@ QString deviceWindow::deviceButtonImgAction(std::string imgPath)
 // 页码切换按钮
 void deviceWindow::pageSwitchButton()
 {
-    if (pageNum == (addedDeviceLists.size() + addedDeviceLists.size() % 2) / 2 || addedDeviceLists.size() <= 2)
+    if (scrollBarValue >= ((deviceShowNum.size() - deviceShowNum.size() % 2) / 2)*370)
         ui->next->hide();
     else
         ui->next->show();
-    if (pageNum == 1)
+    if (scrollBarValue <= 0)
         ui->previous->hide();
     else
         ui->previous->show();
@@ -83,54 +90,94 @@ void deviceWindow::deviceMatch()
 // 设备显示
 void deviceWindow::deviceShow()
 {
-    if (deviceShowNum.size() - pageNum * 2 == -1)
+    deviceButtonConfig(ui->device_1, 0);
+    deviceButtonConfig(ui->device_2, 1);
+    deviceButtonConfig(ui->device_3, 2);
+    deviceButtonConfig(ui->device_4, 3);
+    deviceButtonConfig(ui->device_5, 4);
+    deviceButtonConfig(ui->device_6, 5);
+    deviceButtonConfig(ui->device_7, 6);
+    deviceButtonConfig(ui->device_8, 7);
+}
+
+// 设备按钮设置
+void deviceWindow::deviceButtonConfig(QPushButton* button,int idx)
+{
+    if (idx < deviceShowNum.size())
     {
-        ui->device_1->hide();
-        ui->device_2->hide();
-        ui->device_3->show();
-        ui->device_3->setStyleSheet(deviceButtonImgAction(deviceLists[deviceShowNum[pageNum * 2 - 2]].deviceImgPath));
-    }
-    else if(((deviceShowNum.size() - pageNum * 2) % 2 == 0 || (deviceShowNum.size() - pageNum * 2) % 2== 1) && deviceShowNum.size() > 0)
-    {
-        ui->device_1->show();
-        ui->device_2->show();
-        ui->device_3->hide();
-        ui->device_1->setStyleSheet(deviceButtonImgAction(deviceLists[deviceShowNum[pageNum * 2 - 2]].deviceImgPath));
-        ui->device_2->setStyleSheet(deviceButtonImgAction(deviceLists[deviceShowNum[pageNum * 2 - 1]].deviceImgPath));
-    }
-    else
-    {
-        ui->device_1->hide();
-        ui->device_2->hide();
-        ui->device_3->hide();
+        button->show();
+        button->setStyleSheet(deviceButtonImgAction(deviceLists[deviceShowNum[idx]].deviceImgPath));
     }
 }
 
 // 上一页
 void deviceWindow::on_previous_clicked()
 {
-    pageNum -= 1;
+    scrollBarValue -= 370;
 
     pageSwitchButton();
-    deviceShow();
 }
 // 下一页
 void deviceWindow::on_next_clicked()
 {
-    pageNum += 1;
+    scrollBarValue += 370;
 
     pageSwitchButton();
-    deviceShow();
 }
 // 设备1
 void deviceWindow::on_device_1_clicked()
 {
-    deviceLists[deviceShowNum[pageNum * 2 - 2]].deviceAPP();
 }
-
 // 设备2
 void deviceWindow::on_device_2_clicked()
 {
-    deviceLists[deviceShowNum[pageNum * 2 - 1]].deviceAPP();
+}
+// 设备3
+void deviceWindow::on_device_3_clicked()
+{
+}
+// 设备4
+void deviceWindow::on_device_4_clicked()
+{
+}
+// 设备5
+void deviceWindow::on_device_5_clicked()
+{
+}
+// 设备6
+void deviceWindow::on_device_6_clicked()
+{
+}
+// 设备7
+void deviceWindow::on_device_7_clicked()
+{
+}
+// 设备8
+void deviceWindow::on_device_8_clicked()
+{
+}
+
+// 重写定时器事件
+void deviceWindow::timerEvent(QTimerEvent* e)
+{
+    static int scrollBarValueOut;
+    if (scrollBarValueOut > scrollBarValue+4)
+    {
+        scrollBarValueOut -= 6;
+    }
+    else if (scrollBarValueOut < scrollBarValue-4)
+    {
+        scrollBarValueOut += 6;
+    }
+
+    if (deviceShowNum.size() <= 1)
+    {
+        ui->scrollArea->horizontalScrollBar()->setValue(scrollBarValueOut);
+    }
+    else
+    {
+        ui->scrollArea->horizontalScrollBar()->setValue(scrollBarValueOut+185);
+    }
+    
 }
 
