@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
     // 读取配置文件
     JSON.configFileRead(JSON.CONFIG);
     JSON.configFileRead(JSON.PATHS);
+    GeekEgret::configSet();
 
     greetWindow* Greet = new greetWindow();
     Greet->show();

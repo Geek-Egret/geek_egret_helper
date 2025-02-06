@@ -7,8 +7,11 @@
 #define CONFIG_FOLDER_PATH (std::string)("..\\config")
 #define DEVICE_NUM_LIMIT 8
 
+extern QString windowBackGroundColor;
+extern QString windowBorderRadius;
 extern QString mainWindowStyle;
 extern QString childWindowStyle;
+extern QString buttonHoverBackgroundColor;
 extern QString buttonColorAction;
 extern QString deviceButtonAction;
 extern int greetWindowShowTime;
@@ -26,5 +29,10 @@ typedef struct
 	void (*deviceAPP)(void);	// 设备应用
 }deviceList;
 extern deviceList deviceLists[];
+
+namespace GeekEgret
+{
+	void configSet();
+}
 
 #endif

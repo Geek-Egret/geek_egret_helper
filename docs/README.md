@@ -134,7 +134,5 @@
 
 ## 版本前瞻
 - 进行设置页面编写
-- 修改设置读取函数
-- 新增设置应用函数
 
 # [<font color=#0b88bb>🐧要做一辈子嵌入式开发!!!!!🐧</font>](https://github.com/Geek-Egret)
