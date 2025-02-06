@@ -17,19 +17,13 @@ public:
     ~deviceWindow();
 
     void deviceMatch();
-    void deviceShow();
+    void deviceButtonShow();
+    std::vector<QPushButton*> deviceButton;
 
 private slots:
     void on_previous_clicked();
     void on_next_clicked();
-    void on_device_1_clicked();
-    void on_device_2_clicked();
-    void on_device_3_clicked();
-    void on_device_4_clicked();
-    void on_device_5_clicked();
-    void on_device_6_clicked();
-    void on_device_7_clicked();
-    void on_device_8_clicked();
+    void on_device_button_clicked();
 
 private:
     Ui::deviceWindow *ui;
@@ -48,6 +42,7 @@ private:
     int scrollBarValue = 0; // 滚动条值
     int timerID;    // 定时器ID
     std::vector<int> deviceShowNum; // 设备显示序号
+    
 };
 
 #endif // DEVICE_WINDOW_H

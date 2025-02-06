@@ -6,6 +6,8 @@
 namespace GeekEgret
 {
 	void adc_card_APP();
+	void guitar_hero_APP();
+	void leg_lite_APP();
 }
 
 #endif

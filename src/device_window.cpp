@@ -34,8 +34,8 @@ deviceWindow::deviceWindow(QWidget *parent)
     // 隐藏横向滚动条
     ui->scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    // 显示设备
-    deviceShow();
+    // 显示设备按钮
+    deviceButtonShow();
 
     // 启动定时器 /ms
     timerID = this->startTimer(2);
@@ -59,7 +59,7 @@ QString deviceWindow::deviceButtonImgAction(std::string imgPath)
 // 页码切换按钮
 void deviceWindow::pageSwitchButton()
 {
-    if (scrollBarValue >= ((deviceShowNum.size() - deviceShowNum.size() % 2) / 2)*370)
+    if (scrollBarValue >= (int)(deviceShowNum.size()-2)*370)
         ui->next->hide();
     else
         ui->next->show();
@@ -84,20 +84,27 @@ void deviceWindow::deviceMatch()
             }
         }
     }
-    // ui->label->setText(QString::number(deviceShowNum.size()));
+    // ui->label->setText(QString::number((int)(deviceShowNum.size() - 2) * 370));
 }
 
-// 设备显示
-void deviceWindow::deviceShow()
+// 设备按键显示
+void deviceWindow::deviceButtonShow()
 {
-    deviceButtonConfig(ui->device_1, 0);
-    deviceButtonConfig(ui->device_2, 1);
-    deviceButtonConfig(ui->device_3, 2);
-    deviceButtonConfig(ui->device_4, 3);
-    deviceButtonConfig(ui->device_5, 4);
-    deviceButtonConfig(ui->device_6, 5);
-    deviceButtonConfig(ui->device_7, 6);
-    deviceButtonConfig(ui->device_8, 7);
+    QWidget* scrollAreaWidgetContents = new QWidget();
+    scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
+    scrollAreaWidgetContents->setGeometry(QRect(-2417, 0, 240+ deviceShowNum.size()*370, 331));
+    scrollAreaWidgetContents->setMinimumSize(QSize(240 + deviceShowNum.size() * 370, 0));
+    // 动态添加，自适应已添加设备列表，支持无限设备添加
+    for (int idx = 0; idx < deviceShowNum.size(); idx++)
+    {
+        deviceButton.push_back(new QPushButton(scrollAreaWidgetContents));
+        deviceButton[idx]->setObjectName(deviceLists[deviceShowNum[idx]].deviceName);
+        deviceButton[idx]->setGeometry(QRect(240+370*idx, 35, 280, 280));
+        deviceButton[idx]->setText(QString());
+        ui->scrollArea->setWidget(scrollAreaWidgetContents);
+        deviceButtonConfig(deviceButton[idx], idx);
+        connect(deviceButton[idx], &QPushButton::clicked, this, &deviceWindow::on_device_button_clicked);
+    }
 }
 
 // 设备按钮设置
@@ -124,58 +131,34 @@ void deviceWindow::on_next_clicked()
 
     pageSwitchButton();
 }
-// 设备1
-void deviceWindow::on_device_1_clicked()
+// 设备按钮
+void deviceWindow::on_device_button_clicked()
 {
-    deviceLists[deviceShowNum[0]].deviceAPP();
-}
-// 设备2
-void deviceWindow::on_device_2_clicked()
-{
-    deviceLists[deviceShowNum[1]].deviceAPP();
-}
-// 设备3
-void deviceWindow::on_device_3_clicked()
-{
-    deviceLists[deviceShowNum[2]].deviceAPP();
-}
-// 设备4
-void deviceWindow::on_device_4_clicked()
-{
-    deviceLists[deviceShowNum[3]].deviceAPP();
-}
-// 设备5
-void deviceWindow::on_device_5_clicked()
-{
-    deviceLists[deviceShowNum[4]].deviceAPP();
-}
-// 设备6
-void deviceWindow::on_device_6_clicked()
-{
-    deviceLists[deviceShowNum[5]].deviceAPP();
-}
-// 设备7
-void deviceWindow::on_device_7_clicked()
-{
-    deviceLists[deviceShowNum[6]].deviceAPP();
-}
-// 设备8
-void deviceWindow::on_device_8_clicked()
-{
-    deviceLists[deviceShowNum[7]].deviceAPP();
+    // 获取是哪个按钮按下
+    QPushButton* clickedButton = qobject_cast<QPushButton*>(sender());
+    // 匹配按钮名称
+    for (int idx = 0; idx < deviceShowNum.size(); idx++)
+    {
+        if (deviceLists[deviceShowNum[idx]].deviceName == clickedButton->objectName())
+        {
+            deviceLists[deviceShowNum[idx]].deviceAPP();
+            break;
+        }
+    }
 }
 
 // 重写定时器事件
 void deviceWindow::timerEvent(QTimerEvent* e)
 {
-    static int scrollBarValueOut;
+    // 窗口移动动画
+    static int scrollBarValueOut = 0;
     if (scrollBarValueOut > scrollBarValue+4)
     {
-        scrollBarValueOut -= 6;
+        scrollBarValueOut -= 7;
     }
     else if (scrollBarValueOut < scrollBarValue-4)
     {
-        scrollBarValueOut += 6;
+        scrollBarValueOut += 7;
     }
 
     if (deviceShowNum.size() <= 1)

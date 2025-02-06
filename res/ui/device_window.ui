@@ -98,122 +98,18 @@
    <widget class="QWidget" name="scrollAreaWidgetContents">
     <property name="geometry">
      <rect>
-      <x>-210</x>
+      <x>0</x>
       <y>0</y>
-      <width>3175</width>
-      <height>331</height>
+      <width>758</width>
+      <height>348</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>3175</width>
+      <width>0</width>
       <height>0</height>
      </size>
     </property>
-    <widget class="QPushButton" name="device_2">
-     <property name="geometry">
-      <rect>
-       <x>610</x>
-       <y>35</y>
-       <width>280</width>
-       <height>280</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="device_1">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>35</y>
-       <width>280</width>
-       <height>280</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="device_3">
-     <property name="geometry">
-      <rect>
-       <x>980</x>
-       <y>35</y>
-       <width>280</width>
-       <height>280</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="device_4">
-     <property name="geometry">
-      <rect>
-       <x>1350</x>
-       <y>35</y>
-       <width>280</width>
-       <height>280</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="device_5">
-     <property name="geometry">
-      <rect>
-       <x>1720</x>
-       <y>35</y>
-       <width>280</width>
-       <height>280</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="device_6">
-     <property name="geometry">
-      <rect>
-       <x>2090</x>
-       <y>35</y>
-       <width>280</width>
-       <height>280</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="device_7">
-     <property name="geometry">
-      <rect>
-       <x>2460</x>
-       <y>35</y>
-       <width>280</width>
-       <height>280</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="device_8">
-     <property name="geometry">
-      <rect>
-       <x>2830</x>
-       <y>35</y>
-       <width>280</width>
-       <height>280</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
    </widget>
   </widget>
  </widget>

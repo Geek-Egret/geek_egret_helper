@@ -27,8 +27,8 @@ char32_t  emojiUnicodeRange[3][2] = {
 // 设备列表
 deviceList deviceLists[] = {
 	{"adc_card",":/device/adc_card.png",GeekEgret::adc_card_APP},
-	{"guitar_hero",":/device/leg_lite.png",GeekEgret::adc_card_APP},
-	{"leg_lite",":/device/leg_lite.png",GeekEgret::adc_card_APP},
+	{"guitar_hero",":/device/leg_lite.png",GeekEgret::guitar_hero_APP},
+	{"leg_lite",":/device/leg_lite.png",GeekEgret::leg_lite_APP},
 };
 
 //  所有设备数量

@@ -116,7 +116,12 @@
 ### config.json
 | 元素 | 说明 |
 | --- | --- |
-| `OPTIONS_CHOOSING_COLOR` | 选项选中的颜色 |
+| `WINDOW_BACKGROUND_COLOR` | 窗口背景颜色 |
+| `WINDOW_BORDER_RADIUS` | 窗口边框颜色 |
+| `BUTTON_HOVER_BACKGROUND_COLOR` | 鼠标滑过按钮的背景颜色 |
+| `GREET_WINDOW_SHOW_TIME` | 欢迎界面显示时间 |
+| `GREETING_REFLASH_TIME` | 欢迎语刷新时间 |
+| `ADDED_DEVICE_LISTS` | 已添加设备列表 |
 ### exePaths.json
 | 元素 | 说明 |
 | --- | --- |
@@ -131,7 +136,7 @@
 | V1.1.0 | 修改软件名 |
 | V1.9.0 | V2.0.0预研版本，更改全部GUI！ |
 | V1.9.5 | 新增设备显示栏|
-| V1.9.6 | 更改设备显示栏为丝滑的样式 |
+| V1.9.6 | 更改设备显示栏为丝滑的样式，支持无限设备显示 |
 
 ## 版本前瞻
 - 进行设置页面编写
