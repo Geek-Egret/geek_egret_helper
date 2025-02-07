@@ -37,6 +37,7 @@ private:
     QString deviceButtonImgAction(std::string imgPath);
     void pageSwitchButton();
     void deviceButtonConfig(QPushButton* button, int idx);
+    void smoothScrollBar(QScrollArea* scrollArea, int targetX);
     virtual void timerEvent(QTimerEvent* e);    // 定时器事件
 
     int scrollBarValue = 0; // 滚动条值

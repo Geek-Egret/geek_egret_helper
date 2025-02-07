@@ -37,8 +37,20 @@ deviceWindow::deviceWindow(QWidget *parent)
     // 显示设备按钮
     deviceButtonShow();
 
+    // 窗口移动
+    if (deviceShowNum.size() == 1)
+    {
+        scrollBarValue = 0;
+        ui->scrollArea->horizontalScrollBar()->setValue(scrollBarValue);
+    }    
+    else
+    {
+        scrollBarValue = 185;
+        ui->scrollArea->horizontalScrollBar()->setValue(scrollBarValue);
+    }
+
     // 启动定时器 /ms
-    timerID = this->startTimer(2);
+    // timerID = this->startTimer(2);
 }
 
 deviceWindow::~deviceWindow()
@@ -51,7 +63,7 @@ QString deviceWindow::deviceButtonImgAction(std::string imgPath)
 {
     QString action;
     action = QString::fromStdString("QPushButton{image:url(" + imgPath + ");}"	// 按键正常背景图片
-        "QPushButton:hover{image:url(:/device/start.png);}");	// 鼠标划过背景颜色
+        "QPushButton:hover{image:url(:/ui/ui_img/start.png);}");	// 鼠标划过背景颜色
 
     return action;
 }
@@ -107,6 +119,24 @@ void deviceWindow::deviceButtonShow()
     }
 }
 
+// 平滑滚动
+void deviceWindow::smoothScrollBar(QScrollArea* scrollArea, int targetX) 
+{
+    QScrollBar* scrollBar = scrollArea->horizontalScrollBar();
+
+    // 创建动画对象，绑定到垂直滚动条的 "value" 属性
+    QPropertyAnimation* animation = new QPropertyAnimation(scrollBar, "value");
+    animation->setDuration(500);  // 动画时长 500ms
+    animation->setEasingCurve(QEasingCurve::OutQuad);  // 缓动曲线
+
+    // 设置起始值和目标值
+    animation->setStartValue(scrollBar->value());
+    animation->setEndValue(targetX);
+
+    // 动画结束时自动删除对象
+    animation->start(QAbstractAnimation::DeleteWhenStopped);
+}
+
 // 设备按钮设置
 void deviceWindow::deviceButtonConfig(QPushButton* button,int idx)
 {
@@ -123,6 +153,9 @@ void deviceWindow::on_previous_clicked()
     scrollBarValue -= 370;
 
     pageSwitchButton();
+
+    // 窗口移动
+    smoothScrollBar(ui->scrollArea, scrollBarValue);
 }
 // 下一页
 void deviceWindow::on_next_clicked()
@@ -130,6 +163,9 @@ void deviceWindow::on_next_clicked()
     scrollBarValue += 370;
 
     pageSwitchButton();
+
+    // 窗口移动
+    smoothScrollBar(ui->scrollArea, scrollBarValue);    
 }
 // 设备按钮
 void deviceWindow::on_device_button_clicked()
@@ -150,25 +186,6 @@ void deviceWindow::on_device_button_clicked()
 // 重写定时器事件
 void deviceWindow::timerEvent(QTimerEvent* e)
 {
-    // 窗口移动动画
-    static int scrollBarValueOut = 0;
-    if (scrollBarValueOut > scrollBarValue+4)
-    {
-        scrollBarValueOut -= 7;
-    }
-    else if (scrollBarValueOut < scrollBarValue-4)
-    {
-        scrollBarValueOut += 7;
-    }
 
-    if (deviceShowNum.size() <= 1)
-    {
-        ui->scrollArea->horizontalScrollBar()->setValue(scrollBarValueOut);
-    }
-    else
-    {
-        ui->scrollArea->horizontalScrollBar()->setValue(scrollBarValueOut+185);
-    }
-    
 }
 

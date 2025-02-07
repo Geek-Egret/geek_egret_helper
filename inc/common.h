@@ -27,6 +27,7 @@
 #include <QScrollBar>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QScrollArea>
 
 // LIB
 #include "json.hpp"

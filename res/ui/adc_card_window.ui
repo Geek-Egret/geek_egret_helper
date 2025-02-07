@@ -26,7 +26,7 @@
    <string>Geek-Egret 助手-设置</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="ge_helper.qrc">
+   <iconset>
     <normaloff>:/mainWindow/logo/logo_1.png</normaloff>:/mainWindow/logo/logo_1.png</iconset>
   </property>
   <widget class="QPushButton" name="back">
@@ -58,7 +58,7 @@
    </property>
    <property name="icon">
     <iconset resource="ge_helper.qrc">
-     <normaloff>:/mainWindow/button/back.png</normaloff>:/mainWindow/button/back.png</iconset>
+     <normaloff>:/ui/ui_img/back.png</normaloff>:/ui/ui_img/back.png</iconset>
    </property>
    <property name="iconSize">
     <size>

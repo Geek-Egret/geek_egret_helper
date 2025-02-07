@@ -51,7 +51,7 @@ public:
         back->setMinimumSize(QSize(35, 25));
         back->setMaximumSize(QSize(35, 25));
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/mainWindow/button/back.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        icon1.addFile(QString::fromUtf8(":/ui/ui_img/back.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         back->setIcon(icon1);
         back->setIconSize(QSize(25, 25));
         back->setFlat(true);

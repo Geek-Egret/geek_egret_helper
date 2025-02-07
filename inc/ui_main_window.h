@@ -46,7 +46,7 @@ public:
         mainWindow->setFont(font);
         mainWindow->setMouseTracking(false);
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/mainWindow/logo/logo_1.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        icon.addFile(QString::fromUtf8(":/logo/logo_1.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         mainWindow->setWindowIcon(icon);
         mainWindow->setWindowOpacity(1.000000000000000);
         mainWindow->setAutoFillBackground(false);
@@ -61,7 +61,7 @@ public:
         Minimize->setMaximumSize(QSize(15, 15));
         Minimize->setStyleSheet(QString::fromUtf8("background:transparent"));
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/mainWindow/button/minimize.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        icon1.addFile(QString::fromUtf8(":/ui/ui_img/minimize.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         Minimize->setIcon(icon1);
         Minimize->setIconSize(QSize(13, 13));
         Minimize->setFlat(true);
@@ -72,7 +72,7 @@ public:
         Close->setMaximumSize(QSize(15, 15));
         Close->setStyleSheet(QString::fromUtf8("background:transparent"));
         QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/mainWindow/button/close.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        icon2.addFile(QString::fromUtf8(":/ui/ui_img/close.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         Close->setIcon(icon2);
         Close->setIconSize(QSize(13, 13));
         Close->setFlat(true);
@@ -84,7 +84,7 @@ public:
         url->setStyleSheet(QString::fromUtf8("background:transparent\n"
 ""));
         QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/mainWindow/button/url_logo.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        icon3.addFile(QString::fromUtf8(":/ui/ui_img/url_logo.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         url->setIcon(icon3);
         url->setIconSize(QSize(100, 45));
         url->setFlat(true);
@@ -113,7 +113,7 @@ public:
         config->setMaximumSize(QSize(35, 35));
         config->setStyleSheet(QString::fromUtf8("background:transparent"));
         QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/mainWindow/button/config.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        icon4.addFile(QString::fromUtf8(":/ui/ui_img/config.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         config->setIcon(icon4);
         config->setIconSize(QSize(25, 25));
         config->setFlat(true);
@@ -131,7 +131,7 @@ public:
         add->setMaximumSize(QSize(105, 35));
         add->setStyleSheet(QString::fromUtf8("background:transparent"));
         QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/mainWindow/button/add.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        icon5.addFile(QString::fromUtf8(":/ui/ui_img/add.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         add->setIcon(icon5);
         add->setIconSize(QSize(100, 25));
         add->setFlat(true);

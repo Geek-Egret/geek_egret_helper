@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="ge_helper.qrc">
+    <normaloff>:/logo/logo_1.png</normaloff>:/logo/logo_1.png</iconset>
+  </property>
   <widget class="QPushButton" name="previous">
    <property name="geometry">
     <rect>
@@ -42,7 +46,7 @@
    </property>
    <property name="icon">
     <iconset resource="ge_helper.qrc">
-     <normaloff>:/mainWindow/button/previous.png</normaloff>:/mainWindow/button/previous.png</iconset>
+     <normaloff>:/ui/ui_img/previous.png</normaloff>:/ui/ui_img/previous.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -71,7 +75,7 @@
    </property>
    <property name="icon">
     <iconset resource="ge_helper.qrc">
-     <normaloff>:/mainWindow/button/next.png</normaloff>:/mainWindow/button/next.png</iconset>
+     <normaloff>:/ui/ui_img/next.png</normaloff>:/ui/ui_img/next.png</iconset>
    </property>
    <property name="iconSize">
     <size>

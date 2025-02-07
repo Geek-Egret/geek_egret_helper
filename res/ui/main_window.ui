@@ -35,7 +35,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="ge_helper.qrc">
-    <normaloff>:/mainWindow/logo/logo_1.png</normaloff>:/mainWindow/logo/logo_1.png</iconset>
+    <normaloff>:/logo/logo_1.png</normaloff>:/logo/logo_1.png</iconset>
   </property>
   <property name="windowOpacity">
    <double>1.000000000000000</double>
@@ -82,7 +82,7 @@
     </property>
     <property name="icon">
      <iconset resource="ge_helper.qrc">
-      <normaloff>:/mainWindow/button/minimize.png</normaloff>:/mainWindow/button/minimize.png</iconset>
+      <normaloff>:/ui/ui_img/minimize.png</normaloff>:/ui/ui_img/minimize.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -123,7 +123,7 @@
     </property>
     <property name="icon">
      <iconset resource="ge_helper.qrc">
-      <normaloff>:/mainWindow/button/close.png</normaloff>:/mainWindow/button/close.png</iconset>
+      <normaloff>:/ui/ui_img/close.png</normaloff>:/ui/ui_img/close.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -165,7 +165,7 @@
     </property>
     <property name="icon">
      <iconset resource="ge_helper.qrc">
-      <normaloff>:/mainWindow/button/url_logo.png</normaloff>:/mainWindow/button/url_logo.png</iconset>
+      <normaloff>:/ui/ui_img/url_logo.png</normaloff>:/ui/ui_img/url_logo.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -263,7 +263,7 @@
     </property>
     <property name="icon">
      <iconset resource="ge_helper.qrc">
-      <normaloff>:/mainWindow/button/config.png</normaloff>:/mainWindow/button/config.png</iconset>
+      <normaloff>:/ui/ui_img/config.png</normaloff>:/ui/ui_img/config.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -326,7 +326,7 @@
     </property>
     <property name="icon">
      <iconset resource="ge_helper.qrc">
-      <normaloff>:/mainWindow/button/add.png</normaloff>:/mainWindow/button/add.png</iconset>
+      <normaloff>:/ui/ui_img/add.png</normaloff>:/ui/ui_img/add.png</iconset>
     </property>
     <property name="iconSize">
      <size>

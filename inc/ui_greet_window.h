@@ -30,12 +30,12 @@ public:
         greetWindow->setMinimumSize(QSize(300, 188));
         greetWindow->setMaximumSize(QSize(880, 540));
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/mainWindow/logo/logo_1.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        icon.addFile(QString::fromUtf8(":/logo/logo_1.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         greetWindow->setWindowIcon(icon);
         label = new QLabel(greetWindow);
         label->setObjectName("label");
         label->setGeometry(QRect(0, 0, 300, 188));
-        label->setPixmap(QPixmap(QString::fromUtf8(":/mainWindow/logo/logo_2.png")));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/logo/logo_2.png")));
 
         retranslateUi(greetWindow);
 

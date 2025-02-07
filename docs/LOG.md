@@ -1,7 +1,5 @@
-# 2025.2.6 LOG
-## 完成工作
-- 完善设备窗口，添加 scrollArea
-- 将 scrollArea 改为动态的，根据已添加的设备数量进行设置
-## 前瞻工作
+完成工作
+- 完善 deviceWindow的scrollArea动画
+前瞻工作
 - 编写设置窗口和设备添加窗口
 - 编写 ADC采集卡上位机

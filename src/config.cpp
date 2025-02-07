@@ -26,9 +26,10 @@ char32_t  emojiUnicodeRange[3][2] = {
 
 // 设备列表
 deviceList deviceLists[] = {
-	{"adc_card",":/device/adc_card.png",GeekEgret::adc_card_APP},
-	{"guitar_hero",":/device/leg_lite.png",GeekEgret::guitar_hero_APP},
-	{"leg_lite",":/device/leg_lite.png",GeekEgret::leg_lite_APP},
+	{"adc_card",":/device/device_img/adc_card.png",GeekEgret::adc_card_APP},
+	{"guitar_hero",":/device/device_img/leg_lite.png",GeekEgret::guitar_hero_APP},
+	{"leg_lite",":/device/device_img/leg_lite.png",GeekEgret::leg_lite_APP},
+	{"smart_vision",":/device/device_img/smart_vision.png",GeekEgret::leg_lite_APP},
 };
 
 //  所有设备数量

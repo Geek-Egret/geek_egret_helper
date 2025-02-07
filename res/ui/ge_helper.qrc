@@ -1,21 +1,22 @@
 <RCC>
-    <qresource prefix="/mainWindow/logo">
+    <qresource prefix="/logo">
         <file>logo_1.png</file>
         <file>logo_2.png</file>
     </qresource>
-    <qresource prefix="/mainWindow/button">
-        <file>close.png</file>
-        <file>minimize.png</file>
-        <file>url_logo.png</file>
-        <file>add.png</file>
-        <file>config.png</file>
-        <file>back.png</file>
-        <file>next.png</file>
-        <file>previous.png</file>
+    <qresource prefix="/ui">
+        <file>ui_img/add.png</file>
+        <file>ui_img/back.png</file>
+        <file>ui_img/close.png</file>
+        <file>ui_img/config.png</file>
+        <file>ui_img/minimize.png</file>
+        <file>ui_img/next.png</file>
+        <file>ui_img/previous.png</file>
+        <file>ui_img/start.png</file>
+        <file>ui_img/url_logo.png</file>
     </qresource>
     <qresource prefix="/device">
-        <file>adc_card.png</file>
-        <file>leg_lite.png</file>
-        <file>start.png</file>
+        <file>device_img/adc_card.png</file>
+        <file>device_img/leg_lite.png</file>
+        <file>device_img/smart_vision.png</file>
     </qresource>
 </RCC>
