@@ -14,6 +14,7 @@ void GE::JSON::configFileRead(CONFIG_FILE_FLAG configFileFlag)
 			/* 窗口背景颜色 */
 			windowBackGroundColor = QString::fromStdString(config_json["WINDOW_BACKGROUND_COLOR"]);
 			windowBorderRadius = QString::fromStdString(config_json["WINDOW_BORDER_RADIUS"]);
+			windowBorderColor = QString::fromStdString(config_json["WINDOW_BORDER_COLOR"]);
 			buttonHoverBackgroundColor = QString::fromStdString(config_json["BUTTON_HOVER_BACKGROUND_COLOR"]);
 			greetWindowShowTime = (int)config_json["GREET_WINDOW_SHOW_TIME"];	// 欢迎窗口显示时间
 			greetingReflashTime = (int)config_json["GREETING_REFLASH_TIME"];	// 问候语刷新时间

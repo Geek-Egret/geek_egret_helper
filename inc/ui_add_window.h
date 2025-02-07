@@ -28,9 +28,9 @@ public:
     {
         if (addWindow->objectName().isEmpty())
             addWindow->setObjectName("addWindow");
-        addWindow->resize(880, 510);
-        addWindow->setMinimumSize(QSize(880, 510));
-        addWindow->setMaximumSize(QSize(880, 510));
+        addWindow->resize(880, 505);
+        addWindow->setMinimumSize(QSize(880, 505));
+        addWindow->setMaximumSize(QSize(880, 505));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/mainWindow/logo/logo_1.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         addWindow->setWindowIcon(icon);

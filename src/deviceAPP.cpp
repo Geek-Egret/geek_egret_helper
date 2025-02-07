@@ -4,7 +4,7 @@
 void GeekEgret::adc_card_APP()
 {
 	adccardWindow* adccard = new adccardWindow(GeekEgret::Main);
-	adccard->move(0, 20);
+	adccard->move(0, 25);
 	adccard->show();
 }
 
@@ -12,7 +12,7 @@ void GeekEgret::adc_card_APP()
 void GeekEgret::guitar_hero_APP()
 {
 	configWindow* Config = new configWindow(GeekEgret::Main);
-	Config->move(0, 20);
+	Config->move(0, 25);
 	Config->show();
 }
 
@@ -20,6 +20,6 @@ void GeekEgret::guitar_hero_APP()
 void GeekEgret::leg_lite_APP()
 {
 	addWindow* Add = new addWindow(GeekEgret::Main);
-	Add->move(0, 20);
+	Add->move(0, 25);
 	Add->show();
 }

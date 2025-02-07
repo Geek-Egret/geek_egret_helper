@@ -33,6 +33,8 @@ public:
     QFrame *line_2;
     QPushButton *add;
     QLabel *greet_emoji;
+    QFrame *line_3;
+    QPushButton *tool;
 
     void setupUi(QMainWindow *mainWindow)
     {
@@ -119,14 +121,14 @@ public:
         config->setFlat(true);
         line_2 = new QFrame(centralwidget);
         line_2->setObjectName("line_2");
-        line_2->setGeometry(QRect(795, 41, 2, 25));
+        line_2->setGeometry(QRect(800, 42, 2, 25));
         line_2->setStyleSheet(QString::fromUtf8("background-color:#9c9c9c;"));
         line_2->setFrameShadow(QFrame::Shadow::Sunken);
         line_2->setLineWidth(0);
         line_2->setFrameShape(QFrame::Shape::VLine);
         add = new QPushButton(centralwidget);
         add->setObjectName("add");
-        add->setGeometry(QRect(680, 37, 105, 35));
+        add->setGeometry(QRect(576, 37, 105, 35));
         add->setMinimumSize(QSize(105, 35));
         add->setMaximumSize(QSize(105, 35));
         add->setStyleSheet(QString::fromUtf8("background:transparent"));
@@ -141,6 +143,24 @@ public:
         QFont font2;
         font2.setPointSize(16);
         greet_emoji->setFont(font2);
+        line_3 = new QFrame(centralwidget);
+        line_3->setObjectName("line_3");
+        line_3->setGeometry(QRect(694, 42, 2, 25));
+        line_3->setStyleSheet(QString::fromUtf8("background-color:#9c9c9c;"));
+        line_3->setFrameShadow(QFrame::Shadow::Sunken);
+        line_3->setLineWidth(0);
+        line_3->setFrameShape(QFrame::Shape::VLine);
+        tool = new QPushButton(centralwidget);
+        tool->setObjectName("tool");
+        tool->setGeometry(QRect(709, 37, 78, 35));
+        tool->setMinimumSize(QSize(0, 35));
+        tool->setMaximumSize(QSize(105, 35));
+        tool->setStyleSheet(QString::fromUtf8("background:transparent"));
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/ui/ui_img/tool.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        tool->setIcon(icon6);
+        tool->setIconSize(QSize(100, 25));
+        tool->setFlat(true);
         mainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(mainWindow);
@@ -158,6 +178,7 @@ public:
         config->setText(QString());
         add->setText(QString());
         greet_emoji->setText(QCoreApplication::translate("mainWindow", "\360\237\245\260", nullptr));
+        tool->setText(QString());
     } // retranslateUi
 
 };

@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(Geek-Egret-Helper VERSION 1.9.0 LANGUAGES C CXX)
-
 set(CMAKE_PLATFORMS "x86_64_windows")
 include(./platforms/${CMAKE_PLATFORMS}.cmake)
 set(CMAKE_PREFIX_PATH ${QT_ROOT_PATH}"/lib/cmake")
+
+project(Geek-Egret-Helper VERSION ${PROJECT_VERSION} LANGUAGES C CXX)
 
 # 添加宏定义
 if(CMAKE_PLATFORMS STREQUAL "x86_64_windows")

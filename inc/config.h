@@ -9,6 +9,7 @@
 
 extern QString windowBackGroundColor;
 extern QString windowBorderRadius;
+extern QString windowBorderColor;
 extern QString mainWindowStyle;
 extern QString childWindowStyle;
 extern QString buttonHoverBackgroundColor;

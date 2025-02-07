@@ -3,6 +3,7 @@
 // 窗口风格
 QString windowBackGroundColor;
 QString windowBorderRadius;
+QString windowBorderColor;
 QString mainWindowStyle;
 QString childWindowStyle;
 // 按键颜色动作
@@ -43,16 +44,15 @@ void GeekEgret::configSet()
 		"background-color:" + windowBackGroundColor + ";"   // 背景颜色
 		"border-radius:" + windowBorderRadius + ";"  // 圆角直径
 		"border-style:solid;"   // 边框线条风格
-		"border-width:2px;"     // 边框线条宽度
-		"border-color:" + windowBackGroundColor + ";"   // 边框颜色
+		"border-width:1px;"     // 边框线条宽度
+		"border-color:" + windowBorderColor + ";"   // 边框颜色
 		"}";
 	childWindowStyle =
 		"QWidget{"
 		"background-color:" + windowBackGroundColor + ";"   // 背景颜色
 		"border-radius:" + windowBorderRadius + ";"  // 圆角直径
 		"border-style:solid;"   // 边框线条风格
-		"border-width:2px;"     // 边框线条宽度
-		"border-color:" + windowBackGroundColor + ";"   // 边框颜色
+		"border-width:0px;"     // 边框线条宽度
 		"}";
 	/* 按键颜色动作 */
 	buttonColorAction = 

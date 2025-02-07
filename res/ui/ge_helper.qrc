@@ -13,6 +13,7 @@
         <file>ui_img/previous.png</file>
         <file>ui_img/start.png</file>
         <file>ui_img/url_logo.png</file>
+        <file>ui_img/tool.png</file>
     </qresource>
     <qresource prefix="/device">
         <file>device_img/adc_card.png</file>

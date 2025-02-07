@@ -28,9 +28,9 @@ public:
     {
         if (adccardWindow->objectName().isEmpty())
             adccardWindow->setObjectName("adccardWindow");
-        adccardWindow->resize(880, 510);
-        adccardWindow->setMinimumSize(QSize(880, 510));
-        adccardWindow->setMaximumSize(QSize(880, 540));
+        adccardWindow->resize(880, 505);
+        adccardWindow->setMinimumSize(QSize(880, 505));
+        adccardWindow->setMaximumSize(QSize(880, 505));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/mainWindow/logo/logo_1.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         adccardWindow->setWindowIcon(icon);

@@ -1,8 +1,9 @@
 {
   "WINDOW_BACKGROUND_COLOR": "#0b88bb",
   "WINDOW_BORDER_RADIUS": "10",
+  "WINDOW_BORDER_COLOR": "#000000",
   "BUTTON_HOVER_BACKGROUND_COLOR": "#1f9ccf",
   "GREET_WINDOW_SHOW_TIME": 1500,
   "GREETING_REFLASH_TIME": 60000,
-  "ADDED_DEVICE_LISTS": [ "adc_card", "smart_vision", "leg_lite" ]
+  "ADDED_DEVICE_LISTS": [ "adc_card" ]
 }

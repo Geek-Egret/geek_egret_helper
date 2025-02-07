@@ -28,9 +28,6 @@ deviceWindow::deviceWindow(QWidget *parent)
     // 设备匹配
     deviceMatch();
 
-    // 页面切换按钮
-    pageSwitchButton();
-
     // 隐藏横向滚动条
     ui->scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
@@ -48,6 +45,9 @@ deviceWindow::deviceWindow(QWidget *parent)
         scrollBarValue = 185;
         ui->scrollArea->horizontalScrollBar()->setValue(scrollBarValue);
     }
+
+    // 页面切换按钮
+    pageSwitchButton();
 
     // 启动定时器 /ms
     // timerID = this->startTimer(2);
@@ -71,11 +71,11 @@ QString deviceWindow::deviceButtonImgAction(std::string imgPath)
 // 页码切换按钮
 void deviceWindow::pageSwitchButton()
 {
-    if (scrollBarValue >= (int)(deviceShowNum.size()-2)*370)
+    if (scrollBarValue >= (int)(deviceShowNum.size()-2)*370+185)
         ui->next->hide();
     else
         ui->next->show();
-    if (scrollBarValue <= 0)
+    if (scrollBarValue <= 185)
         ui->previous->hide();
     else
         ui->previous->show();

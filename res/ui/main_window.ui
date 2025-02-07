@@ -278,8 +278,8 @@
    <widget class="Line" name="line_2">
     <property name="geometry">
      <rect>
-      <x>795</x>
-      <y>41</y>
+      <x>800</x>
+      <y>42</y>
       <width>2</width>
       <height>25</height>
      </rect>
@@ -300,7 +300,7 @@
    <widget class="QPushButton" name="add">
     <property name="geometry">
      <rect>
-      <x>680</x>
+      <x>576</x>
       <y>37</y>
       <width>105</width>
       <height>35</height>
@@ -354,6 +354,69 @@
     </property>
     <property name="text">
      <string>🥰</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_3">
+    <property name="geometry">
+     <rect>
+      <x>694</x>
+      <y>42</y>
+      <width>2</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#9c9c9c;</string>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Sunken</enum>
+    </property>
+    <property name="lineWidth">
+     <number>0</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="tool">
+    <property name="geometry">
+     <rect>
+      <x>709</x>
+      <y>37</y>
+      <width>78</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>35</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>105</width>
+      <height>35</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:transparent</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="ge_helper.qrc">
+      <normaloff>:/ui/ui_img/tool.png</normaloff>:/ui/ui_img/tool.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>25</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
