@@ -6,7 +6,7 @@ set(PROJECT_ROOT_PATH ".")
 # 工程设置文件复制路径(相对于可执行文件)
 set(PROJECT_CONFIG_FOLDER_COPY_PATH "../config")
 # 工程版本号
-set(PROJECT_VERSION 1.9.6)
+set(PROJECT_VERSION 2.0.0)
 # 是否构建安装包
 option(SETUP_PACK_FLAG "if setup a install package" OFF)
 
