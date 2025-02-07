@@ -1,3 +1,4 @@
+V1.9.6
 完成工作
 - 完善 deviceWindow的scrollArea动画
 前瞻工作
