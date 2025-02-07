@@ -28,9 +28,9 @@ public:
     {
         if (configWindow->objectName().isEmpty())
             configWindow->setObjectName("configWindow");
-        configWindow->resize(880, 510);
-        configWindow->setMinimumSize(QSize(880, 505));
-        configWindow->setMaximumSize(QSize(880, 510));
+        configWindow->resize(878, 514);
+        configWindow->setMinimumSize(QSize(878, 514));
+        configWindow->setMaximumSize(QSize(878, 514));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/mainWindow/logo/logo_1.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         configWindow->setWindowIcon(icon);

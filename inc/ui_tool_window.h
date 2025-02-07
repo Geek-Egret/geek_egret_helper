@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'add_window.ui'
+** Form generated from reading UI file 'tool_window.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_ADD_WINDOW_H
-#define UI_ADD_WINDOW_H
+#ifndef UI_TOOL_WINDOW_H
+#define UI_TOOL_WINDOW_H
 
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
@@ -18,25 +18,25 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_addWindow
+class Ui_toolWindow
 {
 public:
     QLabel *title;
     QPushButton *back;
 
-    void setupUi(QWidget *addWindow)
+    void setupUi(QWidget *toolWindow)
     {
-        if (addWindow->objectName().isEmpty())
-            addWindow->setObjectName("addWindow");
-        addWindow->resize(880, 505);
-        addWindow->setMinimumSize(QSize(880, 505));
-        addWindow->setMaximumSize(QSize(880, 505));
+        if (toolWindow->objectName().isEmpty())
+            toolWindow->setObjectName("toolWindow");
+        toolWindow->resize(114, 514);
+        toolWindow->setMinimumSize(QSize(0, 514));
+        toolWindow->setMaximumSize(QSize(880, 514));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/mainWindow/logo/logo_1.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        addWindow->setWindowIcon(icon);
-        title = new QLabel(addWindow);
+        toolWindow->setWindowIcon(icon);
+        title = new QLabel(toolWindow);
         title->setObjectName("title");
-        title->setGeometry(QRect(55, 0, 91, 35));
+        title->setGeometry(QRect(55, 0, 41, 35));
         title->setMinimumSize(QSize(0, 35));
         title->setMaximumSize(QSize(16777215, 35));
         QFont font;
@@ -45,7 +45,7 @@ public:
         font.setBold(true);
         title->setFont(font);
         title->setStyleSheet(QString::fromUtf8("color:#282c34;"));
-        back = new QPushButton(addWindow);
+        back = new QPushButton(toolWindow);
         back->setObjectName("back");
         back->setGeometry(QRect(15, 10, 35, 25));
         back->setMinimumSize(QSize(35, 25));
@@ -56,24 +56,24 @@ public:
         back->setIconSize(QSize(25, 25));
         back->setFlat(true);
 
-        retranslateUi(addWindow);
+        retranslateUi(toolWindow);
 
-        QMetaObject::connectSlotsByName(addWindow);
+        QMetaObject::connectSlotsByName(toolWindow);
     } // setupUi
 
-    void retranslateUi(QWidget *addWindow)
+    void retranslateUi(QWidget *toolWindow)
     {
-        addWindow->setWindowTitle(QCoreApplication::translate("addWindow", "Geek-Egret\345\212\251\346\211\213-\346\267\273\345\212\240\350\256\276\345\244\207", nullptr));
-        title->setText(QCoreApplication::translate("addWindow", "\346\267\273\345\212\240\350\256\276\345\244\207", nullptr));
+        toolWindow->setWindowTitle(QCoreApplication::translate("toolWindow", "Geek-Egret\345\212\251\346\211\213-\346\267\273\345\212\240\350\256\276\345\244\207", nullptr));
+        title->setText(QCoreApplication::translate("toolWindow", "\345\267\245\345\205\267", nullptr));
         back->setText(QString());
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class addWindow: public Ui_addWindow {};
+    class toolWindow: public Ui_toolWindow {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // UI_ADD_WINDOW_H
+#endif // UI_TOOL_WINDOW_H

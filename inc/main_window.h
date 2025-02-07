@@ -34,8 +34,8 @@ private slots:
     void on_url_clicked();
     // 设置
     void on_config_clicked();
-
-    void on_add_clicked();
+    // 工具
+    void on_tool_clicked();
 
 private:
     Ui::mainWindow*ui;

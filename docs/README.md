@@ -89,6 +89,7 @@
     - `uic add_window.ui -o ../../inc/ui_add_window.h`
     - `uic device_window.ui -o ../../inc/ui_device_window.h`
     - `uic adc_card_window.ui -o ../../inc/ui_adc_card_window.h`
+    - `uic element_manage_window.ui -o ../../inc/ui_element_manage_window.h`
 - 进入工程 `platforms` 选择编译平台文件，根据编译环境修改配置内容
 - 使用 Visual Studio/Visual Studio Code/Qt Creator 打开工程
 - 生成/运行
@@ -121,7 +122,6 @@
 | `BUTTON_HOVER_BACKGROUND_COLOR` | 鼠标滑过按钮的背景颜色 |
 | `GREET_WINDOW_SHOW_TIME` | 欢迎界面显示时间 |
 | `GREETING_REFLASH_TIME` | 欢迎语刷新时间 |
-| `ADDED_DEVICE_LISTS` | 已添加设备列表 |
 ### exePaths.json
 | 元素 | 说明 |
 | --- | --- |
@@ -137,6 +137,7 @@
 | V1.9.0 | V2.0.0预研版本，更改全部GUI！ |
 | V1.9.5 | 新增设备显示栏|
 | V1.9.6 | 更改设备显示栏为丝滑的样式，支持无限设备显示，添加工具按钮 |
+| V2.0.0 | 以下是未来更新方向<br>· 为防止后期软件臃肿，删除所有设备上位机，由各个设备工程进行维护<br>· 本软件未来只作为工具软件存在，将维护一系列硬件开发、测试工具，如：硬件物料管理工具、串口助手、终端等等<br>· 未来可能会进行数据库自研工作 |
 
 ## 版本前瞻
 - 进行设置页面编写

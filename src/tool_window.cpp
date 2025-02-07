@@ -1,10 +1,10 @@
-#include "device/ui_adc_card_window.h"
+#include "ui_tool_window.h"
 
 #include "common.h"
 
-adccardWindow::adccardWindow(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::adccardWindow)
+toolWindow::toolWindow(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::toolWindow)
 {
     ui->setupUi(this);
 
@@ -15,24 +15,24 @@ adccardWindow::adccardWindow(QWidget *parent) :
     // 设置窗口样式
     setStyleSheet(childWindowStyle);
 
-    // 控件鼠标动作颜色
-    ui->back->setStyleSheet(buttonColorAction);
-
     // 子窗口镶嵌在父窗口
     setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
     hide();
 
     // 关闭就销毁，释放内存
     setAttribute(Qt::WA_DeleteOnClose, true);
+
+    // 启动定时器 /ms
+    // timerID = this->startTimer(2);
 }
 
-adccardWindow::~adccardWindow()
+toolWindow::~toolWindow()
 {
     delete ui;
 }
 
 // 窗口重绘
-void adccardWindow::paintEvent(QPaintEvent* event)
+void toolWindow::paintEvent(QPaintEvent* event)
 {
     QStyleOption opt;
     opt.initFrom(this);
@@ -41,9 +41,10 @@ void adccardWindow::paintEvent(QPaintEvent* event)
 }
 
 // 返回
-void adccardWindow::on_back_clicked()
+void toolWindow::on_back_clicked()
 {
     // 显示主页面
     this->close();
     // GeekEgret::Main->show();
 }
+

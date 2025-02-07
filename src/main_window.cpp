@@ -20,14 +20,8 @@ mainWindow::mainWindow(QWidget *parent)
     
     // 控件鼠标动作颜色
     ui->url->setStyleSheet(buttonColorAction);
-    ui->add->setStyleSheet(buttonColorAction);
     ui->tool->setStyleSheet(buttonColorAction);
     ui->config->setStyleSheet(buttonColorAction);
-
-    // 显示设备页面
-    deviceWindow* Device = new deviceWindow(this);
-    Device->move(0, 90);
-    Device->show();
 
     // 关闭就销毁，释放内存
     setAttribute(Qt::WA_DeleteOnClose, true);
@@ -136,17 +130,17 @@ void mainWindow::on_config_clicked()
 {
     // 显示设置页面
     configWindow* Config = new configWindow(this);
-    Config->move(0, 25);
+    Config->move(1, 25);
     Config->show();
 }
 
-// 添加设备按键
-void mainWindow::on_add_clicked()
+// 工具按键
+void mainWindow::on_tool_clicked()
 {
-    // 显示添加设备页面
-    addWindow* Add = new addWindow(this);
-    Add->move(0, 25);
-    Add->show();
+    // 显示工具页面
+    toolWindow* Tool = new toolWindow(this);
+    Tool->move(1, 25);
+    Tool->show();
 }
 
 //重写定时器事件

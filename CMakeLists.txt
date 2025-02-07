@@ -35,27 +35,22 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 
 # 用户文件
 aux_source_directory(${PROJECT_ROOT_PATH}/src SRC_FILES)
-aux_source_directory(${PROJECT_ROOT_PATH}/src/device SRC_FILES)
+aux_source_directory(${PROJECT_ROOT_PATH}/src/tool SRC_FILES)
 set(INC_FILES
     ${PROJECT_ROOT_PATH}/inc/main_window.h
     ${PROJECT_ROOT_PATH}/inc/greet_window.h
     ${PROJECT_ROOT_PATH}/inc/config_window.h
-    ${PROJECT_ROOT_PATH}/inc/add_window.h
-    ${PROJECT_ROOT_PATH}/inc/device_window.h
+    ${PROJECT_ROOT_PATH}/inc/tool_window.h
     ${PROJECT_ROOT_PATH}/inc/ui_main_window.h
     ${PROJECT_ROOT_PATH}/inc/ui_greet_window.h
     ${PROJECT_ROOT_PATH}/inc/ui_config_window.h
-    ${PROJECT_ROOT_PATH}/inc/ui_add_window.h
-    ${PROJECT_ROOT_PATH}/inc/ui_device_window.h
+    ${PROJECT_ROOT_PATH}/inc/ui_tool_window.h
     ${PROJECT_ROOT_PATH}/inc/config.h
     ${PROJECT_ROOT_PATH}/inc/ge_json.h
     ${PROJECT_ROOT_PATH}/inc/common.h
 )
-# 设备头文件
-set(DEVICE_INC_FILES
-    ${PROJECT_ROOT_PATH}/inc/device/deviceAPP.h
-    ${PROJECT_ROOT_PATH}/inc/device/adc_card_window.h
-    ${PROJECT_ROOT_PATH}/inc/device/ui_adc_card_window.h
+# 工具头文件
+set(TOOL_INC_FILES
 )
 set(TS_FILES
     ${PROJECT_ROOT_PATH}/res/fonts/GEEK_EGRET_HELPER_zh_CN.ts
@@ -63,27 +58,30 @@ set(TS_FILES
 set(QRC_FILES
     ${PROJECT_ROOT_PATH}/res/ui/ge_helper.qrc
 )
+# 主窗口UI
 set(UI_FILES
     ${PROJECT_ROOT_PATH}/res/ui/main_window.ui
     ${PROJECT_ROOT_PATH}/res/ui/greet_window.ui
     ${PROJECT_ROOT_PATH}/res/ui/config_window.ui
-    ${PROJECT_ROOT_PATH}/res/ui/add_window.ui
-    ${PROJECT_ROOT_PATH}/res/ui/device_window.ui
-    ${PROJECT_ROOT_PATH}/res/ui/adc_card_window.ui
+    ${PROJECT_ROOT_PATH}/res/ui/tool_window.ui
 )
-
+# 工具窗口UI
+set(TOOL_UI_FILES
+)
 
 # 添加头文件路径
 include_directories(${PROJECT_ROOT_PATH}/inc)
+include_directories(${PROJECT_ROOT_PATH}/inc/tool)
 
 # 文件汇总
 set(PROJECT_SOURCES
         ${SRC_FILES}
         ${INC_FILES}
-        ${DEVICE_INC_FILES}
+        ${TOOL_INC_FILES}
         ${TS_FILES}
         ${QRC_FILES}
         ${UI_FILES}
+        ${TOOL_UI_FILES}
         ./res/logo.rc
 )
 # 添加文件

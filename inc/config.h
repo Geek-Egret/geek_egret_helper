@@ -17,19 +17,8 @@ extern QString buttonColorAction;
 extern QString deviceButtonAction;
 extern int greetWindowShowTime;
 extern int greetingReflashTime;
-extern std::vector<std::string> addedDeviceLists;
-extern int allDeviceNum;
 
 extern char32_t  emojiUnicodeRange[3][2];
-
-// 设备列表
-typedef struct 
-{
-	std::string deviceName;	// 设备名
-	std::string deviceImgPath;	// 设备图片路径
-	void (*deviceAPP)(void);	// 设备应用
-}deviceList;
-extern deviceList deviceLists[];
 
 namespace GeekEgret
 {

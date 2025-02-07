@@ -1,28 +1,30 @@
-#ifndef ADC_CARD_WINDOW_H
-#define ADC_CARD_WINDOW_H
+#ifndef TOOL_WINDOW_H
+#define TOOL_WINDOW_H
 
 #include <QWidget>
 #include "common.h"
 
 namespace Ui {
-class adccardWindow;
+    class toolWindow;
 }
 
-class adccardWindow : public QWidget
+class toolWindow : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit adccardWindow(QWidget *parent = nullptr);
-    ~adccardWindow();
+    explicit toolWindow(QWidget* parent = nullptr);
+    ~toolWindow();
 
 private slots:
     // 返回
     void on_back_clicked();
+
 private:
-    Ui::adccardWindow*ui;
+    Ui::toolWindow* ui;
 
     virtual void paintEvent(QPaintEvent* event) override;   // 窗口重绘
+
 };
 
-#endif // ADC_CARD_WINDOW_H
+#endif // TOOL_WINDOW_H
